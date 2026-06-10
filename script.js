@@ -9,7 +9,7 @@ const LINKS = {
    Example: 'https://feeds.behold.so/YourFeedId' */
 const BEHOLD_FEED_URL = 'https://feeds.behold.so/wJQrdjRP6Nb3JsYTxNwK';
 
-const PRODUCT_VIDEO_SRC = 'assets/video/4k_Final.mp4';
+const PRODUCT_VIDEO_SRC = 'assets/video/product.mp4';
 
 const HERO_SPEC_SETS = [
   [

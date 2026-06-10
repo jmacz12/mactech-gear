@@ -2,9 +2,13 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (product video web file)
+
+- Added compressed 1080p `product.mp4` (~20 MB) so “See it in action” play button works on live; keeps sound and cinematic quality
+
 ## 2026-06-10 (product video, mobile hero, rotating highlights)
 
-- Shipped “See it in action” product video section (tap-to-play with sound, above features); mobile hero video with shorter hero height; rotating hero highlight cards (3 benefit sets). Product video file still needs web-compressed MP4 under 100 MB for GitHub — see ROADMAP
+- Shipped “See it in action” product video section (tap-to-play with sound, above features); mobile hero video with shorter hero height; rotating hero highlight cards (3 benefit sets)
 
 ## 2026-06-10 (polish + interactivity + feature photos)
 
