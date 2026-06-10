@@ -20,6 +20,147 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
+/* ── Smooth scroll with nav offset ── */
+const SCROLL_TARGETS = ['#top', '#mission', '#features', '#gallery', '#shop'];
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function getNavOffset() {
+  if (!nav) return 72;
+  return nav.getBoundingClientRect().height + 12;
+}
+
+function scrollToTarget(target, behavior) {
+  if (!target) return;
+
+  if (target.id === 'top' || target === document.body) {
+    window.scrollTo({ top: 0, behavior });
+    return;
+  }
+
+  const offset = getNavOffset();
+  const top = window.scrollY + target.getBoundingClientRect().top - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior });
+}
+
+function initSmoothScroll() {
+  document.documentElement.style.setProperty('--nav-offset', `${getNavOffset()}px`);
+
+  document.querySelectorAll(`a[href^="#"]`).forEach((link) => {
+    const hash = link.getAttribute('href');
+    if (!hash || !SCROLL_TARGETS.includes(hash)) return;
+
+    link.addEventListener('click', (event) => {
+      const target = hash === '#top'
+        ? document.getElementById('top')
+        : document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      const behavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
+      scrollToTarget(target, behavior);
+
+      if (hash !== '#top') {
+        history.pushState(null, '', hash);
+      } else {
+        history.pushState(null, '', `${window.location.pathname}${window.location.search}`);
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--nav-offset', `${getNavOffset()}px`);
+  }, { passive: true });
+}
+
+initSmoothScroll();
+
+/* ── Feature image lightbox ── */
+function initFeatureLightbox() {
+  const lightbox = document.getElementById('feature-lightbox');
+  if (!lightbox) return;
+
+  const panel = lightbox.querySelector('.lightbox-panel');
+  const img = document.getElementById('lightbox-img');
+  const title = document.getElementById('lightbox-title');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const triggers = document.querySelectorAll('.feature-img[data-lightbox-src]');
+  let lastFocus = null;
+
+  const focusable = () => lightbox.querySelectorAll(
+    'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+  );
+
+  function trapFocus(event) {
+    if (event.key !== 'Tab' || lightbox.hidden) return;
+
+    const items = [...focusable()];
+    if (!items.length) return;
+
+    const first = items[0];
+    const last = items[items.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
+  function openLightbox(src, label, trigger) {
+    lastFocus = trigger;
+    img.src = src;
+    img.alt = label;
+    title.textContent = label;
+
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    closeBtn.focus();
+    document.addEventListener('keydown', onKeydown);
+    document.addEventListener('keydown', trapFocus);
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    img.removeAttribute('src');
+    document.removeEventListener('keydown', onKeydown);
+    document.removeEventListener('keydown', trapFocus);
+
+    if (lastFocus && typeof lastFocus.focus === 'function') {
+      lastFocus.focus();
+    }
+    lastFocus = null;
+  }
+
+  function onKeydown(event) {
+    if (event.key === 'Escape') closeLightbox();
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      openLightbox(
+        trigger.dataset.lightboxSrc,
+        trigger.dataset.lightboxTitle || 'Feature image',
+        trigger
+      );
+    });
+  });
+
+  lightbox.querySelectorAll('[data-lightbox-close]').forEach((el) => {
+    el.addEventListener('click', closeLightbox);
+  });
+
+  panel.addEventListener('click', (event) => {
+    if (event.target === panel) closeLightbox();
+  });
+}
+
+initFeatureLightbox();
+
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {

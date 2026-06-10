@@ -27,26 +27,34 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Owner product copy (6 features, security pull, unboxing note)
 - [x] **mactechgear.ca** live on Vercel (DNS working)
 - [x] Premium duffle polish (hero specs, numbered features, info cards, CTA band; community section removed)
+- [x] Quick polish (Amazon trust bar, Good to know eyebrow, mission copy)
+- [x] Interactivity (smooth scroll + feature lightbox)
+- [x] Updated 6 feature photos
 
 ---
 
 ## Current focus
 
-1. **Quick polish slice** — see “Next up” below (~15 min; Amazon-first copy).
-2. **Domain transfer (in progress)** — Namecheap paid (order #204950535); watch **johnmacabinguel@gmail.com** for GoDaddy/CIRA approval emails. Do **not** change DNS until transfer completes (~5–7 days). Then set Namecheap DNS → Vercel (same A + CNAME as GoDaddy today).
+1. **Pick next optional slice** — see “Next up” below (Instagram lightbox is the easy win).
+2. **Domain — staying at GoDaddy** — Namecheap transfer cancelled; retry optional. DNS → Vercel already set at GoDaddy. Confirm GoDaddy billing is **domain-only** (no monthly Website Builder).
 
 **Buy path:** ~95% of orders via **Amazon** — site drives to Amazon; direct checkout is a later slice, not urgent.
 
 ---
 
-## Next up — quick polish
+## Next up
 
-Small copy/layout tweaks from the premium review (~15 min):
+Pick one optional slice when ready:
 
-- [ ] **Info cards header** — add eyebrow above Security Pull + Unboxing (e.g. “Good to know” or “Before you buy”)
-- [ ] **Trust bar copy** — align with Amazon checkout (ships via Amazon, Amazon return policy, secure checkout on Amazon.ca)
-- [ ] **Mission line** — swap “refined by community feedback” (e.g. “refined by real-world use”)
-- [ ] **“Explore the Duffle” link** — decide scroll target: `#features` or `#mission`
+| Priority | Slice | What visitors get |
+|----------|--------|-------------------|
+| **Easy win** | Instagram lightbox | Tap gallery tile → larger preview in-page |
+| **Accessibility** | Hero pause/play | Less motion; user control over hero video |
+| **Polish** | Scroll progress / back-to-top | Subtle wayfinding on long scroll |
+| **Optional** | Dedicated OG image (1200×630) | Richer previews when sharing the link |
+| **Optional** | Analytics (Plausible / GA) | Traffic data when owner wants it |
+
+**Probably later:** direct checkout on site, 360° spin, size/spec picker — see sections below.
 
 ---
 
@@ -68,7 +76,8 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 
 ## Later (optional, not urgent)
 
-- [ ] Namecheap DNS cutover after transfer completes
+- [ ] **Optional:** Retry Namecheap transfer (owner deferred — OK at GoDaddy)
+- [x] DNS → Vercel — **already set at GoDaddy** (no Namecheap cutover needed)
 - [ ] Dedicated 1200×630 Open Graph image (richer link previews when sharing the site)
 - [ ] Hero product still — clean duffle photo as video poster / slow-connection fallback
 - [ ] Dedicated gallery images (if different from Instagram)
@@ -81,25 +90,26 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — quick polish slice (Amazon-first).
+MacTech Gear — pick next slice (or polish pass).
 
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca (also mactech-gear.vercel.app)
 
+Last shipped: Amazon trust bar, Good to know eyebrow, mission copy, smooth scroll, feature lightbox, refreshed feature photos.
+
+Next optional (pick one):
+- Instagram lightbox (tap gallery tile → larger preview)
+- Hero pause/play (accessibility)
+- Scroll progress / back-to-top
+- Dedicated OG image (1200×630)
+- Analytics (Plausible / GA)
+
+Domain: staying at GoDaddy. DNS → Vercel already set. Confirm domain-only billing (no Website Builder).
+
 ~95% of orders via Amazon — keep Shop / Amazon CTAs primary.
-Domain: Namecheap transfer in progress; watch johnmacabinguel@gmail.com.
-Don't change DNS until transfer completes.
+Direct checkout = later. Don't change Amazon ASIN or Behold feed URL unless I ask.
 
-Next from ROADMAP "Next up — quick polish":
-- Info cards eyebrow ("Good to know")
-- Trust bar → honest Amazon wording
-- Mission line (drop "community feedback")
-- Explore the Duffle scroll target
-
-Direct checkout = later, not this slice.
-Don't change Amazon ASIN or Behold feed URL unless I ask.
-Partner style: plain English, local check before push.
-Only push when I say so.
+Partner style: plain English, local check before push. Only push when I say so.
 ```
 
 ---

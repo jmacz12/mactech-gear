@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (polish + interactivity + feature photos)
+
+- Shipped Amazon-aligned trust bar, “Good to know” eyebrow, mission copy tweak; smooth scroll with nav offset; tap-to-zoom feature lightbox; refreshed all six feature photos
+
 ## 2026-06-10 (premium duffle polish)
 
 - Shipped 40L duffle premium pass: hero specs, mission/features copy, numbered cards, info cards above Instagram, bottom CTA band, footer tagline; removed community section; Amazon remains primary buy path
