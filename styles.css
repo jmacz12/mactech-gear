@@ -63,6 +63,64 @@ body {
 
 img { max-width: 100%; display: block; }
 
+/* ── Scroll progress + back to top ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 101;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.scroll-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--green-light), var(--green-bright));
+  transition: width .12s linear;
+}
+
+.back-to-top {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1.25rem, 3vh, 2rem);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.82);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, background .2s, border-color .2s;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: rgba(82, 183, 136, 0.18);
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--green-bright);
+  outline-offset: 3px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1244,9 +1302,12 @@ body.lightbox-open {
   .hero-video.is-user-playing { display: block; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .scroll-line { animation: none; }
+  .scroll-progress-fill { transition: none; }
+  .back-to-top { transition: none; }
   .btn:hover, .feature-card:hover, .gallery-item:hover, .nav-cta:hover, .social a:hover,
   .lightbox-close:hover,
-  .hero-video-toggle:hover {
+  .hero-video-toggle:hover,
+  .back-to-top:hover {
     transform: none;
   }
 

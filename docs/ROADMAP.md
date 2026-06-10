@@ -37,13 +37,13 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Product video web file (`product.mp4`, 1080p ~20 MB)
 - [x] Instagram gallery lightbox (tap tile → larger preview + link to post)
 - [x] Hero pause/play (stop looping hero video; prefers-reduced-motion)
+- [x] Scroll progress / back-to-top (subtle wayfinding on long scroll)
 
 ---
 
 ## Current focus
 
-1. **Domain — GoDaddy** — domain-only billing confirmed; DNS → Vercel set.
-2. Pick next optional polish slice when ready (scroll progress / back-to-top, OG image, analytics).
+Pick next optional polish slice when ready (OG image, analytics).
 
 **Source video:** keep `4k_Final.mp4` locally for re-exports; site uses `product.mp4`.
 
@@ -57,10 +57,8 @@ Pick one optional slice when ready:
 
 | Priority | Slice | What visitors get |
 |----------|--------|-------------------|
-| ~~Done~~ | ~~Hero pause/play~~ | ~~Shipped~~ |
-| ~~Easy win~~ | ~~Instagram lightbox~~ | ~~Shipped~~ |
-| **Polish** | Scroll progress / back-to-top | Subtle wayfinding on long scroll |
-| **Optional** | Dedicated OG image (1200×630) | Richer previews when sharing the link |
+| ~~Done~~ | ~~Scroll progress / back-to-top~~ | ~~Shipped~~ |
+| **Recommended** | Dedicated OG image (1200×630) | Richer previews when sharing the link on social |
 | **Optional** | Analytics (Plausible / GA) | Traffic data when owner wants it |
 
 **Probably later:** direct checkout on site, 360° spin, size/spec picker — see sections below.
@@ -104,10 +102,9 @@ MacTech Gear — pick next polish slice.
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca (also mactech-gear.vercel.app)
 
-Last shipped: Hero pause/play (stop looping hero video; prefers-reduced-motion).
+Last shipped: Scroll progress + back-to-top (green progress line, arrow button after hero).
 
 Pick one when ready:
-- Scroll progress / back-to-top
 - Dedicated OG image (1200×630)
 - Analytics (Plausible / GA)
 

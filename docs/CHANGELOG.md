@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (scroll progress + back-to-top)
+
+- Shipped scroll progress bar and back-to-top button — subtle wayfinding on long scroll; respects prefers-reduced-motion
+
 ## 2026-06-10 (hero pause/play)
 
 - Shipped hero background video pause/play control — visitors can stop looping motion for readability; respects prefers-reduced-motion (still image first, optional play)

@@ -35,14 +35,33 @@ document.querySelectorAll('[data-link]').forEach((el) => {
 });
 
 const nav = document.querySelector('.nav');
+const scrollProgressFill = document.getElementById('scroll-progress-fill');
+const backToTop = document.getElementById('back-to-top');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+function updateScrollUi() {
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+
+  if (scrollProgressFill) {
+    scrollProgressFill.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+  }
+
+  if (backToTop) {
+    const showBackToTop = window.scrollY > Math.min(window.innerHeight * 0.55, 480);
+    backToTop.classList.toggle('is-visible', showBackToTop);
+    backToTop.setAttribute('aria-hidden', showBackToTop ? 'false' : 'true');
+    backToTop.tabIndex = showBackToTop ? 0 : -1;
+  }
+}
+
+window.addEventListener('scroll', updateScrollUi, { passive: true });
+updateScrollUi();
 
 /* ── Smooth scroll with nav offset ── */
 const SCROLL_TARGETS = ['#top', '#mission', '#features', '#gallery', '#shop'];
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function getNavOffset() {
   if (!nav) return 72;
@@ -93,6 +112,15 @@ function initSmoothScroll() {
 }
 
 initSmoothScroll();
+
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    const top = document.getElementById('top');
+    const behavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
+    scrollToTarget(top, behavior);
+    history.pushState(null, '', `${window.location.pathname}${window.location.search}`);
+  });
+}
 
 /* ── Hero highlight rotation ── */
 function initHeroSpecRotation() {
