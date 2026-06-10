@@ -30,13 +30,17 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Quick polish (Amazon trust bar, Good to know eyebrow, mission copy)
 - [x] Interactivity (smooth scroll + feature lightbox)
 - [x] Updated 6 feature photos
+- [x] Product video section (“See it in action”, above features, tap-to-play)
+- [x] Mobile hero video + shorter mobile hero height
+- [x] Rotating hero highlight cards (3 benefit sets)
 
 ---
 
 ## Current focus
 
-1. **Pick next optional slice** — see “Next up” below (Instagram lightbox is the easy win).
-2. **Domain — staying at GoDaddy** — Namecheap transfer cancelled; retry optional. DNS → Vercel already set at GoDaddy. Confirm GoDaddy billing is **domain-only** (no monthly Website Builder).
+1. **Product video file** — `assets/video/4k_Final.mp4` is ~187 MB; GitHub max is 100 MB. Export a **1080p web MP4** (~15–30 MB), drop in `assets/video/`, update `PRODUCT_VIDEO_SRC` in `script.js` if renamed, then push. Until then, play button on live site won’t load the file.
+2. **Pick next optional slice** — see “Next up” below (Instagram lightbox is the easy win).
+3. **Domain — staying at GoDaddy** — DNS → Vercel already set. Confirm GoDaddy billing is **domain-only** (no monthly Website Builder).
 
 **Buy path:** ~95% of orders via **Amazon** — site drives to Amazon; direct checkout is a later slice, not urgent.
 
@@ -90,14 +94,17 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — pick next slice (or polish pass).
+MacTech Gear — pick next slice (or add compressed product video).
 
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca (also mactech-gear.vercel.app)
 
-Last shipped: Amazon trust bar, Good to know eyebrow, mission copy, smooth scroll, feature lightbox, refreshed feature photos.
+Last shipped: product video section (above features), mobile hero video + shorter hero, rotating hero highlights (40L/100%/Dual + 2 more sets).
+
+Pending asset: compress 4k_Final.mp4 to ~15–30 MB web MP4 (GitHub 100 MB limit) — section is live but play won’t work until file is pushed.
 
 Next optional (pick one):
+- Compress + push product video
 - Instagram lightbox (tap gallery tile → larger preview)
 - Hero pause/play (accessibility)
 - Scroll progress / back-to-top

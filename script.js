@@ -9,6 +9,26 @@ const LINKS = {
    Example: 'https://feeds.behold.so/YourFeedId' */
 const BEHOLD_FEED_URL = 'https://feeds.behold.so/wJQrdjRP6Nb3JsYTxNwK';
 
+const PRODUCT_VIDEO_SRC = 'assets/video/4k_Final.mp4';
+
+const HERO_SPEC_SETS = [
+  [
+    { value: '40L', label: 'Capacity' },
+    { value: '100%', label: 'Waterproof' },
+    { value: 'Dual', label: 'Carry modes' },
+  ],
+  [
+    { value: 'Air', label: 'Purge valve' },
+    { value: 'Multi', label: 'Tie-downs' },
+    { value: 'Pro', label: 'Zippers' },
+  ],
+  [
+    { value: '3', label: 'Pocket zones' },
+    { value: 'Safe', label: 'Zipper pull' },
+    { value: 'Float', label: 'Capable' },
+  ],
+];
+
 document.querySelectorAll('[data-link]').forEach((el) => {
   const url = LINKS[el.dataset.link];
   if (url) el.href = url;
@@ -73,6 +93,58 @@ function initSmoothScroll() {
 }
 
 initSmoothScroll();
+
+/* ── Hero highlight rotation ── */
+function initHeroSpecRotation() {
+  const list = document.getElementById('hero-specs');
+  if (!list || prefersReducedMotion.matches) return;
+
+  const items = [...list.querySelectorAll('li')];
+  if (items.length !== 3) return;
+
+  let index = 0;
+  let timer = null;
+  const INTERVAL = 4200;
+  const FADE_MS = 380;
+
+  function renderSet(setIndex) {
+    HERO_SPEC_SETS[setIndex].forEach((spec, i) => {
+      items[i].querySelector('.hero-spec-value').textContent = spec.value;
+      items[i].querySelector('.hero-spec-label').textContent = spec.label;
+    });
+  }
+
+  function nextSet() {
+    list.classList.add('is-fading');
+
+    window.setTimeout(() => {
+      index = (index + 1) % HERO_SPEC_SETS.length;
+      renderSet(index);
+      list.classList.remove('is-fading');
+    }, FADE_MS);
+  }
+
+  function startRotation() {
+    if (timer) return;
+    timer = window.setInterval(nextSet, INTERVAL);
+  }
+
+  function stopRotation() {
+    if (!timer) return;
+    window.clearInterval(timer);
+    timer = null;
+    list.classList.remove('is-fading');
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopRotation();
+    else startRotation();
+  });
+
+  startRotation();
+}
+
+initHeroSpecRotation();
 
 /* ── Feature image lightbox ── */
 function initFeatureLightbox() {
@@ -160,6 +232,57 @@ function initFeatureLightbox() {
 }
 
 initFeatureLightbox();
+
+/* ── Product video (click to load + play with sound) ── */
+function initProductVideo() {
+  const video = document.getElementById('product-video');
+  const playBtn = document.getElementById('video-play');
+  const player = document.getElementById('product-video-player');
+  const playLabel = playBtn?.querySelector('.video-play-label');
+  if (!video || !playBtn || !player || !playLabel) return;
+
+  let loaded = false;
+
+  function ensureLoaded() {
+    if (loaded) return;
+    const source = document.createElement('source');
+    source.src = PRODUCT_VIDEO_SRC;
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    video.load();
+    loaded = true;
+  }
+
+  function showPlayOverlay(replay = false) {
+    player.classList.remove('is-playing');
+    playLabel.textContent = replay ? 'Replay' : 'Play video';
+    playBtn.setAttribute('aria-label', replay ? 'Replay product video' : 'Play product video');
+  }
+
+  playBtn.addEventListener('click', () => {
+    ensureLoaded();
+
+    if (video.ended) {
+      video.currentTime = 0;
+    }
+
+    video.play().then(() => {
+      player.classList.add('is-playing');
+    }).catch(() => {
+      showPlayOverlay(video.ended);
+    });
+  });
+
+  video.addEventListener('play', () => {
+    player.classList.add('is-playing');
+  });
+
+  video.addEventListener('ended', () => {
+    showPlayOverlay(true);
+  });
+}
+
+initProductVideo();
 
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length && 'IntersectionObserver' in window) {

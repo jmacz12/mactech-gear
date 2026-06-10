@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (product video, mobile hero, rotating highlights)
+
+- Shipped “See it in action” product video section (tap-to-play with sound, above features); mobile hero video with shorter hero height; rotating hero highlight cards (3 benefit sets). Product video file still needs web-compressed MP4 under 100 MB for GitHub — see ROADMAP
+
 ## 2026-06-10 (polish + interactivity + feature photos)
 
 - Shipped Amazon-aligned trust bar, “Good to know” eyebrow, mission copy tweak; smooth scroll with nav offset; tap-to-zoom feature lightbox; refreshed all six feature photos

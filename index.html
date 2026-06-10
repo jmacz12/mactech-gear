@@ -50,7 +50,7 @@
       <p class="eyebrow">40L Waterproof Duffle · Designed in Canada</p>
       <h1>Built to Endure</h1>
       <p class="hero-sub">Commercial-grade waterproof armor for gear that cannot get wet — from river crossings and ridgelines to the carry home.</p>
-      <ul class="hero-specs" aria-label="Product highlights">
+      <ul class="hero-specs" id="hero-specs" aria-label="Product highlights" aria-live="polite">
         <li><span class="hero-spec-value">40L</span><span class="hero-spec-label">Capacity</span></li>
         <li><span class="hero-spec-value">100%</span><span class="hero-spec-label">Waterproof</span></li>
         <li><span class="hero-spec-value">Dual</span><span class="hero-spec-label">Carry modes</span></li>
@@ -83,6 +83,32 @@
       <h2 class="section-title">Seal Out the Elements</h2>
       <p class="mission-lead">We build waterproof duffles that survive what the forecast forgot — so your essentials stay dry while you focus on the crossing.</p>
       <p>Every MacTech bag is tested on real trails and waterways, refined by real-world use, and built to outlast rain, snow, mud, and the miles in between.</p>
+    </div>
+  </section>
+
+  <section class="section product-video" id="video">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">See it in action</p>
+        <h2 class="section-title">Every Detail, Up Close</h2>
+        <p>A cinematic look at the MacTech 40L duffle — tap play for sound.</p>
+      </div>
+      <div class="video-player reveal" id="product-video-player">
+        <video
+          class="product-video-el"
+          id="product-video"
+          preload="none"
+          poster="assets/images/feature-waterproof.png"
+          playsinline
+          controls
+        ></video>
+        <button type="button" class="video-play" id="video-play" aria-label="Play product video">
+          <span class="video-play-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="video-play-label">Play video</span>
+        </button>
+      </div>
     </div>
   </section>
 

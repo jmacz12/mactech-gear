@@ -41,6 +41,7 @@ html {
 #top,
 #mission,
 #features,
+#video,
 #gallery,
 #shop {
   scroll-margin-top: var(--nav-offset);
@@ -266,6 +267,12 @@ a:focus-visible,
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   backdrop-filter: blur(8px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.hero-specs.is-fading li {
+  opacity: 0;
+  transform: translateY(8px);
 }
 
 .hero-spec-value {
@@ -285,6 +292,11 @@ a:focus-visible,
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--green-bright);
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-actions {
@@ -874,6 +886,94 @@ body.lightbox-open {
   line-height: 1.75;
 }
 
+/* ── Product video ── */
+.product-video {
+  background: var(--gray-900);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.video-player {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  background: var(--black);
+}
+
+.product-video-el {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  vertical-align: middle;
+  background: var(--black);
+}
+
+.video-play {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .85rem;
+  border: none;
+  background: rgba(8, 8, 8, 0.42);
+  color: var(--white);
+  cursor: pointer;
+  transition: background .25s ease, opacity .25s ease;
+}
+
+.video-play:hover {
+  background: rgba(8, 8, 8, 0.55);
+}
+
+.video-play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(45, 106, 79, 0.85);
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.video-play:hover .video-play-icon {
+  transform: scale(1.06);
+  background: rgba(64, 145, 108, 0.92);
+  border-color: var(--green-bright);
+}
+
+.video-play-label {
+  font-family: var(--font-display);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(242, 242, 240, 0.92);
+}
+
+.video-player.is-playing .video-play {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.product-video-el:focus-visible {
+  outline: 2px solid var(--green-bright);
+  outline-offset: 2px;
+}
+
+.video-play:focus-visible {
+  outline: 2px solid var(--green-bright);
+  outline-offset: -2px;
+}
+
 /* ── CTA band ── */
 .cta-band {
   position: relative;
@@ -988,12 +1088,33 @@ body.lightbox-open {
 }
 
 @media (max-width: 768px) {
-  .hero-video { display: none; }
+  .hero {
+    min-height: 72svh;
+    padding: 5rem 1.25rem 2.5rem;
+    justify-content: flex-end;
+  }
+
+  .hero-content { margin-top: 1.25rem; }
+
+  .hero-sub {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-specs { margin-bottom: 1.35rem; }
+
+  .hero-actions { margin-bottom: 1rem; }
+
+  .hero-scroll { display: none; }
 }
 
 @media (max-width: 600px) {
-  .hero { padding: 5.5rem 1.25rem 3.5rem; }
-  .hero-content { margin-top: 1.25rem; }
+  .hero {
+    min-height: 68svh;
+    padding: 5.25rem 1.25rem 2rem;
+  }
+  .hero-content { margin-top: 0.75rem; }
   .hero h1 { font-size: clamp(2.65rem, 12vw, 3.5rem); }
   .hero-actions {
     flex-direction: column;
@@ -1021,6 +1142,11 @@ body.lightbox-open {
   .nav { padding-inline: 1rem; gap: .75rem; }
   .nav-cta { padding: .5rem .9rem; font-size: .72rem; letter-spacing: .1em; }
   .logo-mark { height: 28px; max-width: 120px; }
+  .video-play-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .video-play-label { font-size: .75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1034,8 +1160,15 @@ body.lightbox-open {
   }
   .feature-img,
   .feature-card:hover .feature-img,
-  .lightbox-panel {
+  .lightbox-panel,
+  .video-play:hover .video-play-icon,
+  .hero-specs li {
     transition: none;
     animation: none;
+  }
+
+  .hero-specs.is-fading li {
+    opacity: 1;
+    transform: none;
   }
 }
