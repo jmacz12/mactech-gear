@@ -23,20 +23,21 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Live Instagram gallery via Behold
 - [x] Agent docs + Cursor rules (`AGENTS.md`, `.cursor/rules/`, `docs/`)
 - [x] Pushed to GitHub; live on Vercel preview
+- [x] Pre-launch polish: favicon, SEO meta, hero/nav/mobile fixes
+- [x] Owner product copy (6 features, security pull, unboxing note)
 
 ---
 
 ## Current focus
 
-**Polish pass** — typography, spacing, mobile, hero readability, favicon/SEO if missing.
-
-**DNS cutover** — point mactechgear.ca at Vercel when owner is happy with the preview.
+**DNS cutover** — point **mactechgear.ca** at Vercel when ready (site content is approved).
 
 ---
 
 ## Future (optional, not urgent)
 
-- [ ] Favicon + richer Open Graph image
+- [ ] Dedicated 1200×630 Open Graph image (richer link previews)
+- [ ] Returns/shipping info when direct shop launches
 - [ ] Dedicated gallery images (if different from Instagram)
 - [ ] Analytics (Plausible / GA) when owner wants traffic data
 - [ ] Cancel GoDaddy website builder after DNS is stable
@@ -48,15 +49,13 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 Copy into a fresh Cursor chat:
 
 ```
-Polish MacTech Gear landing page (mactech-gear).
+MacTech Gear landing page — DNS cutover or post-launch tweaks.
 
 Read AGENTS.md and docs/ROADMAP.md first.
-Preview: https://mactech-gear.vercel.app
-Domain pending: mactechgear.ca
+Live: https://mactech-gear.vercel.app
+Domain: mactechgear.ca (pending DNS)
 
-Work in my partner style (plain English, proactive polish, local check before push).
-Review live site, say what you'd improve, then implement.
-
+Partner style: plain English, local check before push.
 Don't change Amazon ASIN or Behold feed URL unless I ask.
 Only push when I say so.
 ```

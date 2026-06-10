@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (pre-launch polish)
+
+- Shipped favicon + SEO (Open Graph, Twitter, canonical), hero/nav/mobile polish, owner product copy on all six features, security pull + unboxing notes; removed returns/shipping until direct shop exists
+
 ## 2026-06-10
 
 - Added agent docs: `AGENTS.md`, `.cursor/rules/`, lightweight `docs/ROADMAP.md` + `CHANGELOG.md`
