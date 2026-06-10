@@ -34,6 +34,10 @@ if (revealEls.length && 'IntersectionObserver' in window) {
   revealEls.forEach((el) => observer.observe(el));
 }
 
+document.querySelectorAll('.feature-card.reveal').forEach((el, index) => {
+  el.style.transitionDelay = `${Math.min(index * 0.07, 0.42)}s`;
+});
+
 const heroVideo = document.querySelector('.hero-video');
 const heroMedia = document.querySelector('.hero-media');
 
