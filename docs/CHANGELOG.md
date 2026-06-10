@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (hero pause/play)
+
+- Shipped hero background video pause/play control — visitors can stop looping motion for readability; respects prefers-reduced-motion (still image first, optional play)
+
 ## 2026-06-10 (Instagram lightbox)
 
 - Shipped Instagram gallery lightbox — tap any tile for a larger in-page preview, caption, and “View on Instagram” link; reuses same zoom pattern as feature photos

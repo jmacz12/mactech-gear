@@ -143,7 +143,10 @@ a:focus-visible,
   pointer-events: none;
 }
 
-.hero > *:not(.hero-media):not(.nav) { position: relative; z-index: 2; }
+.hero > *:not(.hero-media):not(.nav):not(.hero-scroll):not(.hero-video-toggle) {
+  position: relative;
+  z-index: 2;
+}
 
 .nav {
   position: fixed;
@@ -351,6 +354,45 @@ a:focus-visible,
 .btn-ghost:hover {
   border-color: rgba(242,242,240,.7);
   background: rgba(255,255,255,.06);
+}
+
+.hero-video-toggle {
+  position: absolute;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1.25rem, 3vh, 2rem);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.65);
+  color: var(--white);
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+
+.hero-video-toggle:hover {
+  background: rgba(82, 183, 136, 0.18);
+  border-color: var(--border-accent);
+  transform: scale(1.05);
+}
+
+.hero-video-toggle:focus-visible {
+  outline: 2px solid var(--green-bright);
+  outline-offset: 3px;
+}
+
+.hero-video-toggle-icon--play { display: none; }
+
+.hero-video-toggle:not(.is-playing) .hero-video-toggle-icon--pause { display: none; }
+.hero-video-toggle:not(.is-playing) .hero-video-toggle-icon--play { display: block; }
+
+.hero.is-video-paused .hero-video {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero-scroll {
@@ -1148,6 +1190,12 @@ body.lightbox-open {
   .hero-actions { margin-bottom: 1rem; }
 
   .hero-scroll { display: none; }
+
+  .hero-video-toggle {
+    top: calc(var(--nav-offset) + 0.65rem);
+    bottom: auto;
+    right: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1193,11 +1241,17 @@ body.lightbox-open {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-video { display: none; }
+  .hero-video.is-user-playing { display: block; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .scroll-line { animation: none; }
   .btn:hover, .feature-card:hover, .gallery-item:hover, .nav-cta:hover, .social a:hover,
-  .lightbox-close:hover {
+  .lightbox-close:hover,
+  .hero-video-toggle:hover {
     transform: none;
+  }
+
+  .hero-video-toggle {
+    transition: none;
   }
   .feature-img,
   .feature-card:hover .feature-img,

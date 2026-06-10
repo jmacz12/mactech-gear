@@ -36,13 +36,14 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 
 - [x] Product video web file (`product.mp4`, 1080p ~20 MB)
 - [x] Instagram gallery lightbox (tap tile → larger preview + link to post)
+- [x] Hero pause/play (stop looping hero video; prefers-reduced-motion)
 
 ---
 
 ## Current focus
 
-1. **Hero pause/play** — next slice (accessibility; user control over looping hero video).
-2. **Domain — GoDaddy** — domain-only billing confirmed; DNS → Vercel set.
+1. **Domain — GoDaddy** — domain-only billing confirmed; DNS → Vercel set.
+2. Pick next optional polish slice when ready (scroll progress / back-to-top, OG image, analytics).
 
 **Source video:** keep `4k_Final.mp4` locally for re-exports; site uses `product.mp4`.
 
@@ -56,7 +57,7 @@ Pick one optional slice when ready:
 
 | Priority | Slice | What visitors get |
 |----------|--------|-------------------|
-| **Next** | Hero pause/play | Less motion; user control over hero video |
+| ~~Done~~ | ~~Hero pause/play~~ | ~~Shipped~~ |
 | ~~Easy win~~ | ~~Instagram lightbox~~ | ~~Shipped~~ |
 | **Polish** | Scroll progress / back-to-top | Subtle wayfinding on long scroll |
 | **Optional** | Dedicated OG image (1200×630) | Richer previews when sharing the link |
@@ -98,16 +99,17 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — hero pause/play (accessibility slice).
+MacTech Gear — pick next polish slice.
 
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca (also mactech-gear.vercel.app)
 
-Last shipped: Instagram gallery lightbox (tap tile → larger preview + “View on Instagram”).
+Last shipped: Hero pause/play (stop looping hero video; prefers-reduced-motion).
 
-This slice: add pause/play control on the hero background video so visitors can stop looping motion (accessibility + readability). Respect prefers-reduced-motion if practical. Mobile hero video too if it loops.
-
-Still optional later: scroll progress / back-to-top, dedicated OG image (1200×630), analytics (Plausible / GA).
+Pick one when ready:
+- Scroll progress / back-to-top
+- Dedicated OG image (1200×630)
+- Analytics (Plausible / GA)
 
 Domain: GoDaddy domain-only (confirmed). DNS → Vercel set.
 

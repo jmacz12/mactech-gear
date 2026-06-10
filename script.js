@@ -325,27 +325,75 @@ document.querySelectorAll('.feature-card.reveal').forEach((el, index) => {
   el.style.transitionDelay = `${Math.min(index * 0.07, 0.42)}s`;
 });
 
-const heroVideo = document.querySelector('.hero-video');
-const heroMedia = document.querySelector('.hero-media');
+/* ── Hero background video (pause/play + reduced motion) ── */
+function initHeroVideoToggle() {
+  const video = document.querySelector('.hero-video');
+  const media = document.querySelector('.hero-media');
+  const hero = document.querySelector('.hero');
+  const toggle = document.getElementById('hero-video-toggle');
+  if (!video || !media || !hero || !toggle) return;
 
-if (heroVideo && heroMedia) {
   const setHeroPosterFromVideo = () => {
-    if (!heroVideo.videoWidth) return;
+    if (!video.videoWidth) return;
 
     const canvas = document.createElement('canvas');
-    canvas.width = heroVideo.videoWidth;
-    canvas.height = heroVideo.videoHeight;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    ctx.drawImage(heroVideo, 0, 0);
+    ctx.drawImage(video, 0, 0);
     const poster = canvas.toDataURL('image/jpeg', 0.88);
-    heroVideo.setAttribute('poster', poster);
-    heroMedia.style.backgroundImage = `url(${poster})`;
+    video.setAttribute('poster', poster);
+    media.style.backgroundImage = `url(${poster})`;
   };
 
-  heroVideo.addEventListener('loadeddata', setHeroPosterFromVideo, { once: true });
+  video.addEventListener('loadeddata', setHeroPosterFromVideo, { once: true });
+
+  let playing = !prefersReducedMotion.matches;
+
+  function syncToggle() {
+    toggle.classList.toggle('is-playing', playing);
+    toggle.setAttribute('aria-pressed', String(playing));
+    toggle.setAttribute(
+      'aria-label',
+      playing ? 'Pause background video' : 'Play background video',
+    );
+    hero.classList.toggle('is-video-paused', !playing);
+    video.classList.toggle('is-user-playing', playing && prefersReducedMotion.matches);
+  }
+
+  function setPlaying(next) {
+    playing = next;
+    if (playing) {
+      video.play().catch(() => {
+        playing = false;
+        syncToggle();
+      });
+    } else {
+      video.pause();
+    }
+    syncToggle();
+  }
+
+  if (prefersReducedMotion.matches) {
+    video.pause();
+    video.removeAttribute('autoplay');
+  }
+
+  toggle.addEventListener('click', () => setPlaying(!playing));
+
+  prefersReducedMotion.addEventListener('change', (event) => {
+    if (event.matches) {
+      setPlaying(false);
+      video.removeAttribute('autoplay');
+    }
+  });
+
+  syncToggle();
 }
+
+initHeroVideoToggle();
 
 function escapeAttr(value) {
   return String(value)
