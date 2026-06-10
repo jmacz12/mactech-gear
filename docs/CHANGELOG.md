@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (direct shop paused — Amazon only)
+
+- Paused Buy on MacTech buttons while MacTech Stripe account is set up; all shop CTAs back to Amazon only (Stripe API kept in repo for re-enable)
+
 ## 2026-06-10 (direct shop — Stripe)
 
 - Shipped Buy on MacTech via Stripe Checkout ($119.89 CAD) — Amazon stays primary; nav Shop Now scrolls to buy section; Canada & US shipping at checkout; 30-day returns copy; order success page

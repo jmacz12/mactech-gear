@@ -45,11 +45,9 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 
 ## Current focus
 
-Direct shop is **live** (Stripe key in Vercel). Test checkout with test key before real orders.
+**Amazon only** — direct shop UI paused until MacTech Stripe account is ready (code/API stays in repo).
 
-Amazon stays **primary**; **Buy on MacTech** is secondary ($119.89 CAD + shipping at checkout).
-
-**Optional next:** analytics (Plausible / GA).
+**Optional next:** re-enable Buy on MacTech when new Stripe key is in Vercel; analytics (Plausible / GA).
 
 ---
 

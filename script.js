@@ -11,11 +11,6 @@ const BEHOLD_FEED_URL = 'https://feeds.behold.so/wJQrdjRP6Nb3JsYTxNwK';
 
 const PRODUCT_VIDEO_SRC = 'assets/video/product.mp4';
 
-const SHOP = {
-  priceLabel: '$119.89',
-  currency: 'CAD',
-};
-
 const HERO_SPEC_SETS = [
   [
     { value: '40L', label: 'Capacity' },
@@ -515,40 +510,3 @@ async function loadInstagramGallery() {
 }
 
 loadInstagramGallery();
-
-/* ── Direct shop (Stripe Checkout) ── */
-function initShopCheckout() {
-  const buttons = document.querySelectorAll('[data-shop-checkout]');
-  if (!buttons.length) return;
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', async () => {
-      if (button.disabled) return;
-
-      const label = button.textContent;
-      button.disabled = true;
-      button.setAttribute('aria-busy', 'true');
-      button.textContent = 'Opening checkout…';
-
-      try {
-        const response = await fetch('/api/create-checkout-session', { method: 'POST' });
-        const data = await response.json();
-
-        if (!response.ok || !data.url) {
-          throw new Error(data.error || 'Checkout unavailable');
-        }
-
-        window.location.href = data.url;
-      } catch {
-        button.disabled = false;
-        button.removeAttribute('aria-busy');
-        button.textContent = label;
-        window.alert(
-          'Checkout is not available right now. Please use Shop on Amazon, or try again in a few minutes.'
-        );
-      }
-    });
-  });
-}
-
-initShopCheckout();
