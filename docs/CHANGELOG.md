@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (Instagram lightbox)
+
+- Shipped Instagram gallery lightbox — tap any tile for a larger in-page preview, caption, and “View on Instagram” link; reuses same zoom pattern as feature photos
+
 ## 2026-06-10 (product video web file)
 
 - Added compressed 1080p `product.mp4` (~20 MB) so “See it in action” play button works on live; keeps sound and cinematic quality

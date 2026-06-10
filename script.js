@@ -146,21 +146,27 @@ function initHeroSpecRotation() {
 
 initHeroSpecRotation();
 
-/* ── Feature image lightbox ── */
-function initFeatureLightbox() {
+/* ── Image lightbox (features + Instagram gallery) ── */
+function initImageLightbox() {
   const lightbox = document.getElementById('feature-lightbox');
   if (!lightbox) return;
 
   const panel = lightbox.querySelector('.lightbox-panel');
   const img = document.getElementById('lightbox-img');
   const title = document.getElementById('lightbox-title');
+  const externalLink = document.getElementById('lightbox-link');
   const closeBtn = lightbox.querySelector('.lightbox-close');
-  const triggers = document.querySelectorAll('.feature-img[data-lightbox-src]');
   let lastFocus = null;
 
   const focusable = () => lightbox.querySelectorAll(
-    'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+    'button:not([disabled]), a[href]:not([hidden]), [tabindex]:not([tabindex="-1"])'
   );
+
+  function resolveExternalHref(value) {
+    if (!value) return null;
+    if (value.startsWith('http')) return value;
+    return LINKS[value] || null;
+  }
 
   function trapFocus(event) {
     if (event.key !== 'Tab' || lightbox.hidden) return;
@@ -180,11 +186,24 @@ function initFeatureLightbox() {
     }
   }
 
-  function openLightbox(src, label, trigger) {
+  function setExternalLink(href) {
+    if (!externalLink) return;
+
+    if (href) {
+      externalLink.href = href;
+      externalLink.hidden = false;
+    } else {
+      externalLink.hidden = true;
+      externalLink.removeAttribute('href');
+    }
+  }
+
+  function openLightbox(src, label, trigger, externalHref) {
     lastFocus = trigger;
     img.src = src;
     img.alt = label;
     title.textContent = label;
+    setExternalLink(externalHref);
 
     lightbox.hidden = false;
     lightbox.setAttribute('aria-hidden', 'false');
@@ -199,6 +218,7 @@ function initFeatureLightbox() {
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
     img.removeAttribute('src');
+    setExternalLink(null);
     document.removeEventListener('keydown', onKeydown);
     document.removeEventListener('keydown', trapFocus);
 
@@ -212,14 +232,17 @@ function initFeatureLightbox() {
     if (event.key === 'Escape') closeLightbox();
   }
 
-  triggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      openLightbox(
-        trigger.dataset.lightboxSrc,
-        trigger.dataset.lightboxTitle || 'Feature image',
-        trigger
-      );
-    });
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-lightbox-src]');
+    if (!trigger) return;
+
+    event.preventDefault();
+    openLightbox(
+      trigger.dataset.lightboxSrc,
+      trigger.dataset.lightboxTitle || 'Image preview',
+      trigger,
+      resolveExternalHref(trigger.dataset.lightboxLink)
+    );
   });
 
   lightbox.querySelectorAll('[data-lightbox-close]').forEach((el) => {
@@ -231,7 +254,7 @@ function initFeatureLightbox() {
   });
 }
 
-initFeatureLightbox();
+initImageLightbox();
 
 /* ── Product video (click to load + play with sound) ── */
 function initProductVideo() {
@@ -324,15 +347,27 @@ if (heroVideo && heroMedia) {
   heroVideo.addEventListener('loadeddata', setHeroPosterFromVideo, { once: true });
 }
 
+function escapeAttr(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function normalizeInstagramPosts(posts) {
   return posts
     .map((post) => ({
       permalink: post.permalink,
       image: post.image || post.mediaUrl,
+      lightboxImage: post.lightboxImage || post.image || post.mediaUrl,
       caption: post.caption || '',
     }))
     .filter((post) => (
-      post.permalink?.startsWith('https://') && post.image?.startsWith('https://')
+      post.permalink?.startsWith('https://')
+      && post.image?.startsWith('https://')
+      && post.lightboxImage?.startsWith('https://')
     ));
 }
 
@@ -342,11 +377,14 @@ function renderInstagramGallery(grid, posts) {
   if (!tiles.length) return false;
 
   grid.innerHTML = tiles.map((post) => {
+    const title = post.caption
+      ? post.caption.replace(/[<>"']/g, '').slice(0, 120)
+      : 'MacTech Gear on Instagram';
     const label = post.caption
-      ? post.caption.replace(/[<>"']/g, '').slice(0, 100)
-      : 'View on Instagram';
+      ? `View larger preview: ${post.caption.replace(/[<>"']/g, '').slice(0, 80)}`
+      : 'View larger Instagram preview';
 
-    return `<a href="${post.permalink}" target="_blank" rel="noopener noreferrer" class="gallery-item gallery-item--live" style="background-image:url('${post.image.replace(/'/g, '%27')}')" aria-label="${label}"></a>`;
+    return `<button type="button" class="gallery-item gallery-item--live" style="background-image:url('${post.image.replace(/'/g, '%27')}')" data-lightbox-src="${escapeAttr(post.lightboxImage)}" data-lightbox-title="${escapeAttr(title)}" data-lightbox-link="${escapeAttr(post.permalink)}" aria-label="${escapeAttr(label)}"></button>`;
   }).join('');
 
   grid.classList.add('gallery-grid--live');
@@ -357,6 +395,7 @@ function mapBeholdPosts(data) {
   return (data.posts || []).map((post) => ({
     permalink: post.permalink,
     image: post.sizes?.medium?.mediaUrl || post.sizes?.large?.mediaUrl || post.mediaUrl,
+    lightboxImage: post.sizes?.large?.mediaUrl || post.sizes?.medium?.mediaUrl || post.mediaUrl,
     caption: post.prunedCaption || post.caption || '',
   }));
 }

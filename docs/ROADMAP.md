@@ -35,13 +35,14 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Rotating hero highlight cards (3 benefit sets)
 
 - [x] Product video web file (`product.mp4`, 1080p ~20 MB)
+- [x] Instagram gallery lightbox (tap tile → larger preview + link to post)
 
 ---
 
 ## Current focus
 
-1. **Pick next optional slice** — see “Next up” below (Instagram lightbox is the easy win).
-2. **Domain — staying at GoDaddy** — DNS → Vercel already set. Confirm GoDaddy billing is **domain-only** (no monthly Website Builder).
+1. **Hero pause/play** — next slice (accessibility; user control over looping hero video).
+2. **Domain — GoDaddy** — domain-only billing confirmed; DNS → Vercel set.
 
 **Source video:** keep `4k_Final.mp4` locally for re-exports; site uses `product.mp4`.
 
@@ -55,8 +56,8 @@ Pick one optional slice when ready:
 
 | Priority | Slice | What visitors get |
 |----------|--------|-------------------|
-| **Easy win** | Instagram lightbox | Tap gallery tile → larger preview in-page |
-| **Accessibility** | Hero pause/play | Less motion; user control over hero video |
+| **Next** | Hero pause/play | Less motion; user control over hero video |
+| ~~Easy win~~ | ~~Instagram lightbox~~ | ~~Shipped~~ |
 | **Polish** | Scroll progress / back-to-top | Subtle wayfinding on long scroll |
 | **Optional** | Dedicated OG image (1200×630) | Richer previews when sharing the link |
 | **Optional** | Analytics (Plausible / GA) | Traffic data when owner wants it |
@@ -97,21 +98,18 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — pick next slice (or polish pass).
+MacTech Gear — hero pause/play (accessibility slice).
 
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca (also mactech-gear.vercel.app)
 
-Last shipped: product video (1080p, tap-to-play with sound), mobile hero video + shorter hero, rotating hero highlights.
+Last shipped: Instagram gallery lightbox (tap tile → larger preview + “View on Instagram”).
 
-Next optional (pick one):
-- Instagram lightbox (tap gallery tile → larger preview)
-- Hero pause/play (accessibility)
-- Scroll progress / back-to-top
-- Dedicated OG image (1200×630)
-- Analytics (Plausible / GA)
+This slice: add pause/play control on the hero background video so visitors can stop looping motion (accessibility + readability). Respect prefers-reduced-motion if practical. Mobile hero video too if it loops.
 
-Domain: staying at GoDaddy. DNS → Vercel already set. Confirm domain-only billing (no Website Builder).
+Still optional later: scroll progress / back-to-top, dedicated OG image (1200×630), analytics (Plausible / GA).
+
+Domain: GoDaddy domain-only (confirmed). DNS → Vercel set.
 
 ~95% of orders via Amazon — keep Shop / Amazon CTAs primary.
 Direct checkout = later. Don't change Amazon ASIN or Behold feed URL unless I ask.
