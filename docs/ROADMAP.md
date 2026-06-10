@@ -39,43 +39,17 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Hero pause/play (stop looping hero video; prefers-reduced-motion)
 - [x] Scroll progress / back-to-top (subtle wayfinding on long scroll)
 - [x] Dedicated OG image (1200×630 link preview for social sharing)
+- [x] Direct shop via Stripe Checkout (Amazon primary; MacTech secondary)
 
 ---
 
 ## Current focus
 
-Optional: analytics when you want traffic data. Otherwise the landing page polish list is complete.
+Direct shop is **live** (Stripe key in Vercel). Test checkout with test key before real orders.
 
-**Source video:** keep `4k_Final.mp4` locally for re-exports; site uses `product.mp4`.
+Amazon stays **primary**; **Buy on MacTech** is secondary ($119.89 CAD + shipping at checkout).
 
-**Buy path:** ~95% of orders via **Amazon** — site drives to Amazon; direct checkout is a later slice, not urgent.
-
----
-
-## Next up
-
-| Priority | Slice | What visitors get |
-|----------|--------|-------------------|
-| ~~Done~~ | ~~Dedicated OG image~~ | ~~Shipped~~ |
-| **Optional** | Analytics (Plausible / GA) | Traffic data when owner wants it |
-
-**Probably later:** direct checkout on site, 360° spin, size/spec picker — see sections below.
-
----
-
-## Later — direct checkout on site
-
-Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until then (~95% of orders today).
-
-**Plan when ready (separate slice — needs owner decisions):**
-
-- [ ] Pick checkout provider (Stripe Checkout, Shopify Lite, Snipcart, etc.)
-- [ ] Pricing, shipping zones (Canada-first?), returns policy copy
-- [ ] Product flow: landing page + “Buy now” vs Amazon, or dedicated `/shop`
-- [ ] Trust bar + footer updates once *you* own fulfillment
-- [ ] Tax / business setup (owner — not a code task)
-
-**Keep for now:** Amazon link stays primary. Don’t remove ASIN without owner saying so.
+**Optional next:** analytics (Plausible / GA).
 
 ---
 
@@ -98,18 +72,13 @@ Copy into a fresh Cursor chat:
 MacTech Gear — what's next?
 
 Read AGENTS.md and docs/ROADMAP.md first.
-Live: https://mactechgear.ca (also mactech-gear.vercel.app)
+Live: https://mactechgear.ca
 
-Last shipped: Dedicated OG image (1200×630 branded link preview for social sharing).
+Last shipped: Direct shop (Stripe Checkout — Buy on MacTech; Amazon primary).
 
-Optional next slice:
-- Analytics (Plausible / GA) — when owner wants traffic data
+Optional: Analytics (Plausible / GA).
 
-Domain: GoDaddy domain-only (confirmed). DNS → Vercel set.
-
-~95% of orders via Amazon — keep Shop / Amazon CTAs primary.
-Direct checkout = later. Don't change Amazon ASIN or Behold feed URL unless I ask.
-
+Don't change Amazon ASIN or Behold feed URL unless I ask.
 Partner style: plain English, local check before push. Only push when I say so.
 ```
 

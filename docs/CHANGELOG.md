@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (direct shop — Stripe)
+
+- Shipped Buy on MacTech via Stripe Checkout ($119.89 CAD) — Amazon stays primary; nav Shop Now scrolls to buy section; Canada & US shipping at checkout; 30-day returns copy; order success page
+
 ## 2026-06-10 (OG image)
 
 - Shipped dedicated 1200×630 Open Graph image — branded link preview (logo, duffle, “Built to Endure”) when sharing mactechgear.ca on social and messaging apps

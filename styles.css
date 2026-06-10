@@ -414,6 +414,25 @@ a:focus-visible,
   background: rgba(255,255,255,.06);
 }
 
+.btn-secondary {
+  border-color: var(--border-accent);
+  color: var(--green-bright);
+  background: rgba(82, 183, 136, 0.08);
+}
+
+.btn-secondary:hover {
+  background: rgba(82, 183, 136, 0.18);
+  border-color: var(--green-bright);
+  color: var(--white);
+}
+
+.btn-secondary:disabled,
+.btn-secondary[aria-busy="true"] {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
 .hero-video-toggle {
   position: absolute;
   right: clamp(1rem, 3vw, 1.75rem);
@@ -1157,9 +1176,96 @@ body.lightbox-open {
   font-size: clamp(1rem, 2.2vw, 1.12rem);
   color: rgba(242, 242, 240, 0.72);
   line-height: 1.75;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   max-width: 480px;
   margin-inline: auto;
+}
+
+.cta-price {
+  font-family: var(--font-display);
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  margin-bottom: 1.5rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: .85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.cta-shipping-note {
+  font-size: .88rem;
+  color: rgba(242, 242, 240, 0.5);
+  line-height: 1.6;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.info-card a {
+  color: var(--green-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.info-card a:hover {
+  color: var(--white);
+}
+
+/* ── Shop success page ── */
+.success-page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(45, 106, 79, 0.2) 0%, transparent 70%),
+    var(--black);
+}
+
+.success-main {
+  width: min(520px, 100%);
+  text-align: center;
+}
+
+.success-logo {
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1.08;
+  margin-bottom: 1rem;
+}
+
+.success-lead {
+  color: rgba(242, 242, 240, 0.78);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.success-note {
+  font-size: .95rem;
+  color: rgba(242, 242, 240, 0.55);
+  margin-bottom: 2rem;
+}
+
+.success-note a {
+  color: var(--green-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ── Footer ── */
@@ -1271,6 +1377,8 @@ body.lightbox-open {
     margin-bottom: 0;
   }
   .hero-actions .btn { width: 100%; min-height: 48px; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; max-width: 320px; }
   .trust-items { gap: .35rem; }
   .divider { display: none; }
   .hero-specs { gap: .5rem; }
@@ -1307,7 +1415,8 @@ body.lightbox-open {
   .btn:hover, .feature-card:hover, .gallery-item:hover, .nav-cta:hover, .social a:hover,
   .lightbox-close:hover,
   .hero-video-toggle:hover,
-  .back-to-top:hover {
+  .back-to-top:hover,
+  .btn-secondary:hover {
     transform: none;
   }
 

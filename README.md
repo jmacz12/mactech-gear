@@ -90,6 +90,44 @@ assets/
 - **No feed configured** — gallery shows your local product photo fallbacks
 - **Meta Developer API** — if you later get access, set `INSTAGRAM_ACCESS_TOKEN` in Vercel (see `.env.example`); the site tries Behold first, then Meta
 
+## Direct shop (Stripe Checkout)
+
+Visitors can **buy on Amazon** (primary) or **Buy on MacTech** (secondary) at **$119.89 CAD**. You pack and ship from Canada; Stripe handles payment.
+
+### One-time setup (~10 min)
+
+1. **Stripe Dashboard** → [API keys](https://dashboard.stripe.com/apikeys)
+   - Copy your **Secret key** (`sk_live_...` for live, `sk_test_...` while testing)
+
+2. **Vercel** → Project → Settings → Environment Variables → add:
+   | Name | Value |
+   |------|--------|
+   | `STRIPE_SECRET_KEY` | your secret key |
+   | `SITE_URL` | `https://mactechgear.ca` |
+   | `SHIPPING_CA_CENTS` | shipping in cents, e.g. `1500` = $15 (placeholder until you know real cost) |
+   | `SHIPPING_US_CENTS` | e.g. `2500` = $25 |
+
+3. **Redeploy** Vercel (or push any commit) so the API picks up the keys.
+
+4. **Test** with a Stripe test key first — click **Buy on MacTech**, use [Stripe test card](https://docs.stripe.com/testing#cards) `4242 4242 4242 4242`.
+
+### How orders reach you
+
+- Stripe emails you and the customer a receipt.
+- Stripe Dashboard → **Payments** shows shipping address and phone (collected at checkout).
+- Update `SHIPPING_CA_CENTS` / `SHIPPING_US_CENTS` in Vercel anytime — no code change.
+
+### Local testing
+
+`npx serve` does not run the checkout API. Use:
+
+```bash
+npm install
+npx vercel dev
+```
+
+Copy `.env.example` to `.env.local` and add your test `STRIPE_SECRET_KEY`.
+
 ## Other customization
 
 - **Links** — edit the `LINKS` object at the top of `script.js`
