@@ -3,33 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MacTech Gear â€” Built to Endure</title>
+  <title>MacTech Gear — Built to Endure</title>
   <meta name="description" content="Adventure ready. 100% Waterproof. Designed in Canada. MacTech outdoor backpacks built for the trail.">
+  <meta property="og:title" content="MacTech Gear — Built to Endure">
+  <meta property="og:description" content="Adventure ready. 100% waterproof. Engineered for every trail, river, and ridgeline.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mactechgear.ca">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="assets/images/feature-waterproof.png"
+      >
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+
     <nav class="nav">
       <a href="#top" class="logo" aria-label="MacTech Gear home">
-        <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
-          <rect x="4" y="8" width="14" height="14" fill="#2d6a4f"/>
-          <rect x="22" y="8" width="14" height="14" fill="#40916c"/>
-          <rect x="13" y="22" width="14" height="14" fill="#52b788"/>
-        </svg>
-        <span>MacTech</span>
+        <img src="assets/logo.png" alt="MacTech Gear" class="logo-mark" width="140" height="32">
       </a>
-      <a href="https://www.amazon.ca" class="nav-cta" target="_blank" rel="noopener">Shop Now</a>
+      <a href="https://www.amazon.ca" data-link="amazon" class="nav-cta" target="_blank" rel="noopener noreferrer">Shop Now</a>
     </nav>
 
-    <div class="hero-content">
+    <div class="hero-content reveal">
       <p class="eyebrow">Designed in Canada</p>
       <h1>Built to Endure</h1>
       <p class="hero-sub">Adventure ready. 100% waterproof. Engineered for every trail, river, and ridgeline.</p>
       <div class="hero-actions">
-        <a href="https://www.amazon.ca" class="btn btn-primary" target="_blank" rel="noopener">Shop on Amazon</a>
+        <a href="https://www.amazon.ca" data-link="amazon" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Shop on Amazon</a>
         <a href="#features" class="btn btn-ghost">Explore Features</a>
       </div>
     </div>
@@ -51,56 +63,56 @@
   </div>
 
   <section class="section mission" id="mission">
-    <div class="container narrow">
-      <h2>Our Mission</h2>
-      <p>We build gear that survives the elements so you can focus on the adventure. Every MacTech pack is tested on real trails, refined by community feedback, and built to outlast the weather â€” rain, snow, mud, and everything in between.</p>
+    <div class="container narrow reveal">
+      <h2 class="section-title">Our Mission</h2>
+      <p>We build gear that survives the elements so you can focus on the adventure. Every MacTech pack is tested on real trails, refined by community feedback, and built to outlast the weather — rain, snow, mud, and everything in between.</p>
     </div>
   </section>
 
   <section class="section features" id="features">
     <div class="container">
-      <div class="section-header">
-        <h2>Engineered for the Wild</h2>
+      <div class="section-header reveal">
+        <h2 class="section-title">Engineered for the Wild</h2>
         <p>Six details that make the difference when conditions turn.</p>
       </div>
       <div class="feature-grid">
-        <article class="feature-card">
-          <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80')"></div>
+        <article class="feature-card reveal">
+          <div class="feature-img feature-img--waterproof"></div>
           <div class="feature-body">
             <h3>Waterproof Armor</h3>
             <p>Sealed seams and rugged fabric keep your gear dry through downpours and river crossings.</p>
           </div>
         </article>
-        <article class="feature-card">
-          <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1622260614153-0812ff487247?w=600&q=80')"></div>
+        <article class="feature-card reveal">
+          <div class="feature-img feature-img--valve"></div>
           <div class="feature-body">
             <h3>Air Purge Valve</h3>
-            <p>Roll-top design with purge valve â€” compress your load and keep water out at the same time.</p>
+            <p>Roll-top design with purge valve — compress your load and keep water out at the same time.</p>
           </div>
         </article>
-        <article class="feature-card">
-          <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&q=80')"></div>
+        <article class="feature-card reveal">
+          <div class="feature-img feature-img--capacity"></div>
           <div class="feature-body">
             <h3>40L Capacity</h3>
             <p>Room for a full day hike or overnight kit without the bulk. Packs down when you need it lean.</p>
           </div>
         </article>
-        <article class="feature-card">
-          <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80')"></div>
+        <article class="feature-card reveal">
+          <div class="feature-img feature-img--carry"></div>
           <div class="feature-body">
             <h3>Versatile Carry</h3>
             <p>Padded straps and ergonomic back panel for comfortable miles on trail or commute.</p>
           </div>
         </article>
-        <article class="feature-card">
-          <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1606107557195-0a29cbf1f2b2?w=600&q=80')"></div>
+        <article class="feature-card reveal">
+          <div class="feature-img feature-img--anchor"></div>
           <div class="feature-body">
             <h3>Anchor Points</h3>
             <p>Reinforced handles and lash points for boats, bikes, roof racks, and camp setups.</p>
           </div>
         </article>
-        <article class="feature-card">
-          <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80&sat=-100')"></div>
+        <article class="feature-card reveal">
+          <div class="feature-img feature-img--zippers"></div>
           <div class="feature-body">
             <h3>Smooth Zippers</h3>
             <p>Waterproof zipper pulls that glide in cold, wet, and gritty conditions.</p>
@@ -111,9 +123,9 @@
   </section>
 
   <section class="section community" id="community">
-    <div class="container community-inner">
+    <div class="container community-inner reveal">
       <div>
-        <h2>Built by the Community</h2>
+        <h2 class="section-title">Built by the Community</h2>
         <p>Real hikers, paddlers, and commuters shape every MacTech product. Share your trail report and help us build gear that actually works out there.</p>
       </div>
       <a href="mailto:hello@mactechgear.ca?subject=Trail%20Report" class="btn btn-primary">Submit a Trail Report</a>
@@ -121,41 +133,42 @@
   </section>
 
   <section class="section gallery" id="gallery">
-    <div class="container">
-      <h2>Explore with MacTech on Instagram</h2>
-      <div class="gallery-grid">
-        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80')"></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&q=80')"></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&q=80')"></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80')"></a>
+    <div class="container reveal">
+      <h2 class="gallery-title">Explore with MacTech on Instagram</h2>
+      <p class="gallery-sub"><a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer">@mactechgear</a></p>
+      <div class="gallery-grid" id="instagram-gallery" data-count="4">
+        <a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer" class="gallery-item gallery-item--1" aria-label="View on Instagram"></a>
+        <a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer" class="gallery-item gallery-item--2" aria-label="View on Instagram"></a>
+        <a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer" class="gallery-item gallery-item--3" aria-label="View on Instagram"></a>
+        <a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer" class="gallery-item gallery-item--4" aria-label="View on Instagram"></a>
       </div>
     </div>
   </section>
 
   <section class="info-band">
-    <div class="container info-grid">
+    <div class="container info-grid reveal">
       <div>
         <h3>Hassle-Free Returns</h3>
-        <p>Not the right fit? Return within 30 days for a full refund. No questions, no hassle â€” we want you on the trail with gear you trust.</p>
+        <p>Not the right fit? Return within 30 days for a full refund. No questions, no hassle — we want you on the trail with gear you trust.</p>
       </div>
       <div>
         <h3>Important Shipping Info</h3>
-        <p>Orders ship within 1â€“2 business days across Canada and the US. Free standard shipping on all orders. Tracking provided at dispatch.</p>
+        <p>Orders ship within 1–2 business days across Canada and the US. Free standard shipping on all orders. Tracking provided at dispatch.</p>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="social">
-      <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <a href="https://www.facebook.com/MacTechOfficial" data-link="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       </a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.78C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      <a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.78C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
     </div>
     <p class="brand">MacTech Gear</p>
-    <p class="copyright">Copyright Â© 2024 MacTech Gear Â· All rights reserved.</p>
+    <p class="copyright">Copyright © 2026 MacTech Gear · All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
