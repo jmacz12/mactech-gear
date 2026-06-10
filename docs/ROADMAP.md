@@ -38,12 +38,13 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Instagram gallery lightbox (tap tile → larger preview + link to post)
 - [x] Hero pause/play (stop looping hero video; prefers-reduced-motion)
 - [x] Scroll progress / back-to-top (subtle wayfinding on long scroll)
+- [x] Dedicated OG image (1200×630 link preview for social sharing)
 
 ---
 
 ## Current focus
 
-Pick next optional polish slice when ready (OG image, analytics).
+Optional: analytics when you want traffic data. Otherwise the landing page polish list is complete.
 
 **Source video:** keep `4k_Final.mp4` locally for re-exports; site uses `product.mp4`.
 
@@ -53,12 +54,9 @@ Pick next optional polish slice when ready (OG image, analytics).
 
 ## Next up
 
-Pick one optional slice when ready:
-
 | Priority | Slice | What visitors get |
 |----------|--------|-------------------|
-| ~~Done~~ | ~~Scroll progress / back-to-top~~ | ~~Shipped~~ |
-| **Recommended** | Dedicated OG image (1200×630) | Richer previews when sharing the link on social |
+| ~~Done~~ | ~~Dedicated OG image~~ | ~~Shipped~~ |
 | **Optional** | Analytics (Plausible / GA) | Traffic data when owner wants it |
 
 **Probably later:** direct checkout on site, 360° spin, size/spec picker — see sections below.
@@ -85,7 +83,7 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 
 - [ ] **Optional:** Retry Namecheap transfer (owner deferred — OK at GoDaddy)
 - [x] DNS → Vercel — **already set at GoDaddy** (no Namecheap cutover needed)
-- [ ] Dedicated 1200×630 Open Graph image (richer link previews when sharing the site)
+- [x] Dedicated 1200×630 Open Graph image (richer link previews when sharing the site)
 - [ ] Hero product still — clean duffle photo as video poster / slow-connection fallback
 - [ ] Dedicated gallery images (if different from Instagram)
 - [ ] Analytics (Plausible / GA) when owner wants traffic data
@@ -97,16 +95,15 @@ Owner may add **buy on mactechgear.ca** someday; **Amazon stays primary** until 
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — pick next polish slice.
+MacTech Gear — what's next?
 
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca (also mactech-gear.vercel.app)
 
-Last shipped: Scroll progress + back-to-top (green progress line, arrow button after hero).
+Last shipped: Dedicated OG image (1200×630 branded link preview for social sharing).
 
-Pick one when ready:
-- Dedicated OG image (1200×630)
-- Analytics (Plausible / GA)
+Optional next slice:
+- Analytics (Plausible / GA) — when owner wants traffic data
 
 Domain: GoDaddy domain-only (confirmed). DNS → Vercel set.
 

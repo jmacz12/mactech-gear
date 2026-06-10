@@ -39,6 +39,7 @@ Drop your files into `assets/` with these **exact filenames** — no code edits 
 ```
 assets/
   logo.png
+  og-image.png          ← 1200×630 link preview (Facebook, iMessage, etc.)
   video/
     hero.mp4
   images/

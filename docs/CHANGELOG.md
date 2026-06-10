@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-10 (OG image)
+
+- Shipped dedicated 1200×630 Open Graph image — branded link preview (logo, duffle, “Built to Endure”) when sharing mactechgear.ca on social and messaging apps
+
 ## 2026-06-10 (scroll progress + back-to-top)
 
 - Shipped scroll progress bar and back-to-top button — subtle wayfinding on long scroll; respects prefers-reduced-motion
