@@ -1,6 +1,8 @@
-# MacTech Gear â€” Product Landing Page
+# MacTech Gear — Product Landing Page
 
 A free, static recreation of the MacTech product page. No monthly hosting fees.
+
+**For agents:** see [`AGENTS.md`](AGENTS.md), [`docs/ROADMAP.md`](docs/ROADMAP.md), and [`.cursor/rules/`](.cursor/rules/).
 
 ## Preview locally
 
@@ -50,7 +52,7 @@ assets/
 
 **Tips**
 - Hero poster for mobile is auto-captured from `hero.mp4` on load
-- Instagram gallery is automatic once `INSTAGRAM_ACCESS_TOKEN` is set (see below)
+- Instagram gallery syncs via Behold (configured in `script.js`)
 - Logo is the full wordmark — no separate nav text needed
 
 ## Instagram auto-feed (recommended: Behold)

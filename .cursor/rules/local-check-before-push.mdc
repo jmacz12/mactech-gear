@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+description: Owner checks locally first — do not push until they say push/ship it.
+---
+
+# Local check before push
+
+**Plain English:** Finish the slice locally, give **How to check locally**, and **wait**. Do not push until owner says **push**, **ship it**, or **go live**.
+
+## Workflow
+
+| Step | Agent | Owner |
+|------|-------|-------|
+| 1 | Make changes locally | — |
+| 2 | Say **Local only (not pushed yet)** | — |
+| 3 | Give numbered check steps (`npx serve . -l 3000`) | Clicks through |
+| 4 | Owner says looks good / ship it | Confirms |
+| 5 | Commit + push (if asked) | Optional check on live Vercel URL |
+
+## Status wording
+
+| State | Say |
+|-------|-----|
+| Built, not pushed | **Local only (not pushed yet).** |
+| After push | **Live deploy in progress (pushed to main; Vercel building).** |
+| Deploy done | **Live on mactech-gear.vercel.app** (or mactechgear.ca when DNS is cut). |
+
+## Never commit
+
+`.env`, `.env.local`, secrets, Vercel tokens

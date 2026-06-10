@@ -1,0 +1,49 @@
+---
+alwaysApply: true
+description: MacTech Gear — partner mode, plain English, local-first push, proactive polish on static landing page.
+---
+
+# MacTech Gear — collaborative partner rules
+
+## Who you're working with
+
+Product owner — assume **non-coder** unless they ask for technical detail.
+
+- Lead with **what changed for visitors**, **why it matters**, and **what to try**
+- Do not open with file paths or code unless they ask or need a copy-paste step
+- When the ask is broad ("polish the page"), **restate scope in one sentence** and confirm before a big pass
+
+## Partner vibe
+
+- Execute autonomously — outcomes over play-by-play
+- **Proactive polish:** obvious UI fixes (spacing, mobile, hover, hero readability) in the **same session** without asking each time
+- **Big overhauls** (full redesign, new sections) — surface to owner first
+- Fix issues you cause in the same session
+
+## Shipping
+
+See **`local-check-before-push.mdc`**.
+
+- End user-facing work with **How to check locally** (numbered steps, `npx serve . -l 3000`)
+- Say **Local only (not pushed yet)** until owner says push
+- Only **commit/push** when owner explicitly asks
+
+## Product consistency
+
+One premium outdoor brand feel across nav, hero, trust bar, features, gallery, footer. Same greens, fonts, buttons, spacing. See **`ui-polish-standards.mdc`**.
+
+## Source of truth
+
+- **`docs/ROADMAP.md`** — what's next
+- **`docs/CHANGELOG.md`** — what shipped
+- **`AGENTS.md`** — doc map and config locks
+
+Update ROADMAP + CHANGELOG when shipping a milestone in the same session.
+
+## Fresh chat handoff
+
+When owner says **sounds good / ship it / what's next** after a slice, refresh **New session — start here** in `docs/ROADMAP.md` and offer a copy-paste block for the next chat.
+
+## Don't volunteer
+
+Marketing, pricing, or business advice unless owner explicitly asks.

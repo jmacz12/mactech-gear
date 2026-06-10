@@ -1,0 +1,38 @@
+---
+description: UI polish standards for MacTech Gear static landing page.
+globs: index.html,styles.css,script.js
+alwaysApply: false
+---
+
+# UI polish standards — MacTech Gear
+
+## Mobile-first
+
+- Test at **375px** width — no horizontal overflow
+- Touch targets **≥ 44px** (buttons, nav CTA, social icons, gallery tiles)
+- Full-width CTAs on small screens where appropriate
+
+## Interactions
+
+- Buttons and links need visible **hover** and **focus-visible** states
+- No dead clicks — external links use `target="_blank"` + `rel="noopener noreferrer"`
+
+## Consistency
+
+- **Typography:** Barlow Condensed (headings) + DM Sans (body) — don't add random fonts
+- **Colors:** use CSS variables in `:root` (`--green`, `--green-bright`, etc.)
+- **Spacing:** section padding and card gaps should feel even hero → features → gallery → footer
+- **Imagery:** product/outdoor tone; assets live in `assets/` with fixed filenames
+
+## Performance
+
+- Hero video: desktop only; poster/static image on mobile
+- Don't add heavy JS libraries for a one-page site
+- Prefer optimized images (PNG/JPG in `assets/images/`)
+
+## Before calling a slice done
+
+- [ ] Desktop and mobile look intentional, not "template"
+- [ ] Hero text readable over video/image
+- [ ] Gallery loads (Behold) or shows sensible fallbacks
+- [ ] Shop + social links work
