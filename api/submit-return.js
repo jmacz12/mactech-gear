@@ -83,6 +83,34 @@ function makeReference() {
   return `MTG-${stamp}-${rand}`;
 }
 
+async function forwardToMissionControl({ reference, email, orderRef, reason, photo }) {
+  const url = process.env.MISSION_CONTROL_RETURN_WEBHOOK_URL;
+  const secret = process.env.MISSION_CONTROL_RETURN_WEBHOOK_SECRET;
+  if (!url || !secret) return false;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${secret}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        reference,
+        email,
+        orderRef,
+        reason,
+        photo,
+        photoSource: 'camera',
+      }),
+    });
+    return response.ok;
+  } catch (error) {
+    console.error('Mission Control return forward failed:', error.message);
+    return false;
+  }
+}
+
 async function notifyOwner({ reference, email, orderRef, reason, buffer, mime }) {
   const to = process.env.RETURN_TO_EMAIL;
   const apiKey = process.env.RESEND_API_KEY;
@@ -163,14 +191,27 @@ module.exports = async (req, res) => {
     }
 
     const reference = makeReference();
-    const emailed = await notifyOwner({
-      reference,
-      email,
-      orderRef,
-      reason,
-      buffer: photo.buffer,
-      mime: photo.mime,
-    });
+    const [emailed, forwarded] = await Promise.all([
+      notifyOwner({
+        reference,
+        email,
+        orderRef,
+        reason,
+        buffer: photo.buffer,
+        mime: photo.mime,
+      }),
+      forwardToMissionControl({
+        reference,
+        email,
+        orderRef,
+        reason,
+        photo: body.photo,
+      }),
+    ]);
+
+    if (!forwarded) {
+      console.warn(`Return ${reference} saved for customer but Mission Control forward skipped or failed.`);
+    }
 
     return res.status(200).json({
       ok: true,
