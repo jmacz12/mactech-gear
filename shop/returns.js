@@ -5,6 +5,7 @@ const cameraCanvas = document.getElementById('return-camera-canvas');
 const cameraStart = document.getElementById('return-camera-start');
 const cameraCapture = document.getElementById('return-camera-capture');
 const cameraRetake = document.getElementById('return-camera-retake');
+const captureRow = document.getElementById('return-capture-row');
 const photoPreview = document.getElementById('return-photo-preview');
 const photoStatus = document.getElementById('return-photo-status');
 const submitBtn = document.getElementById('return-submit');
@@ -47,8 +48,9 @@ async function startCamera() {
     });
     cameraVideo.srcObject = cameraStream;
     cameraWrap.hidden = false;
-    cameraCapture.hidden = false;
-    cameraRetake.hidden = true;
+    if (captureRow) captureRow.hidden = false;
+    if (cameraStart) cameraStart.hidden = true;
+    if (cameraRetake) cameraRetake.hidden = true;
     photoPreview.hidden = true;
     capturedPhoto = null;
     setPhotoStatus('Point your camera at the duffle so the full bag is visible.');
@@ -72,8 +74,9 @@ function capturePhoto() {
   photoPreview.src = capturedPhoto;
   photoPreview.hidden = false;
   cameraWrap.hidden = true;
-  cameraCapture.hidden = true;
-  cameraRetake.hidden = false;
+  if (captureRow) captureRow.hidden = true;
+  if (cameraStart) cameraStart.hidden = true;
+  if (cameraRetake) cameraRetake.hidden = false;
   stopCamera();
   setPhotoStatus('Live photo captured. You can retake if needed.');
 }
@@ -81,7 +84,8 @@ function capturePhoto() {
 function retakePhoto() {
   capturedPhoto = null;
   photoPreview.hidden = true;
-  cameraRetake.hidden = true;
+  if (cameraRetake) cameraRetake.hidden = true;
+  if (cameraStart) cameraStart.hidden = false;
   startCamera();
 }
 

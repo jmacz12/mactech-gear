@@ -55,11 +55,13 @@
         <p class="return-photo-status" id="return-photo-status">Take a live photo of your duffle — uploads and screenshots are not accepted.</p>
         <div class="return-photo-actions">
           <button type="button" class="btn btn-secondary" id="return-camera-start">Open camera</button>
-          <button type="button" class="btn btn-ghost" id="return-camera-capture" hidden>Capture photo</button>
-          <button type="button" class="btn btn-ghost" id="return-camera-retake" hidden>Retake</button>
+          <button type="button" class="btn btn-secondary" id="return-camera-retake" hidden>Retake photo</button>
         </div>
         <div class="return-camera" id="return-camera" hidden>
           <video id="return-camera-video" autoplay playsinline muted></video>
+        </div>
+        <div class="return-capture-row" id="return-capture-row" hidden>
+          <button type="button" class="btn btn-primary btn-lg return-capture-btn" id="return-camera-capture">Capture photo</button>
         </div>
         <canvas id="return-camera-canvas" hidden></canvas>
         <img id="return-photo-preview" class="return-photo-preview" alt="" hidden>
