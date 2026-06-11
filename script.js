@@ -510,3 +510,51 @@ async function loadInstagramGallery() {
 }
 
 loadInstagramGallery();
+
+/* ── Direct shop (Stripe Checkout) ── */
+function initShopCheckout() {
+  const buttons = document.querySelectorAll('[data-shop-checkout]');
+  if (!buttons.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', async () => {
+      if (button.disabled) return;
+
+      const label = button.textContent;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Opening checkout…';
+
+      try {
+        const response = await fetch('/api/create-checkout-session', { method: 'POST' });
+        let data = {};
+        try {
+          data = await response.json();
+        } catch {
+          data = {};
+        }
+
+        if (!response.ok || !data.url) {
+          throw new Error(data.error || 'Checkout unavailable');
+        }
+
+        window.location.href = data.url;
+      } catch (error) {
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = label;
+
+        const isLocalStatic =
+          window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const message = isLocalStatic
+          ? 'Checkout needs the Stripe API. Run npx vercel dev (not npx serve), with your test STRIPE_SECRET_KEY in .env.local — see README.'
+          : error?.message ||
+            'Checkout is not available right now. Please use Shop on Amazon, or try again in a few minutes.';
+
+        window.alert(message);
+      }
+    });
+  });
+}
+
+initShopCheckout();

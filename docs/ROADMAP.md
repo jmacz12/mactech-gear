@@ -45,17 +45,35 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 
 ## Current focus
 
-**Amazon only** — direct shop UI paused until MacTech Stripe account is ready (code/API stays in repo).
+**Session 1: Go live** — code **shipped** 2026-06-11. Finish checklist below before real money.
 
-**Optional next:** re-enable Buy on MacTech when new Stripe key is in Vercel; analytics (Plausible / GA).
+### Go-live checklist (this session)
+
+Do these in order — one slice at a time:
+
+1. [x] **Ship code** — Buy on MacTech + return page on mactechgear.ca
+2. [ ] **Smoke test on live (test mode)** — Buy on MacTech → MacTech Gear at checkout → order confirmed → footer returns page
+3. [ ] **Vercel env audit** — `SITE_URL=https://mactechgear.ca`, `SHIPPING_CA_CENTS`, `SHIPPING_US_CENTS` (`PRODUCT_PRICE_CENTS=11989` optional; defaults in code)
+4. [ ] **Stripe Dashboard** — public business name = MacTech Gear (not MyLeaguePortal); customer receipt emails on
+5. [ ] **Flip to live payments** — swap `STRIPE_SECRET_KEY` to `sk_live_…` → redeploy → one real order when ready
+6. [ ] **Fulfillment** — Stripe → Payments shows shipping address + phone
+
+**Not in go-live slice:** taxes (Stripe Tax + accountant), express/local shipping tiers, control center wiring, analytics.
+
+**Owner notification today:** no site-built order alert yet — use Stripe Dashboard (or Stripe Settings → Notifications) until control center is wired.
+
+**Session 2 (after live): Control center** — owner has a plan: MacTech orders + return emails feed the **main control center for all apps** (not a one-off inbox ping). Bring architecture/repo details in that chat.
 
 ---
 
 ## Later (optional, not urgent)
 
+- [ ] **Main control center** — hub for all projects (MacTech Gear, MyLeaguePortal, etc.). **Owner has a plan** — next session after go-live: Stripe webhook (or shared API) sends **new orders** and **return requests** into control center; pack & ship from one place. Returns may share `RETURN_TO_EMAIL` / Resend path or webhook only.
+- [ ] **Shipping tiers** — express vs standard; local pickup (free) — flat rates for now
+- [ ] **Taxes** — Stripe Tax + accountant before scaling live volume
 - [ ] **Optional:** Retry Namecheap transfer (owner deferred — OK at GoDaddy)
-- [x] DNS → Vercel — **already set at GoDaddy** (no Namecheap cutover needed)
-- [x] Dedicated 1200×630 Open Graph image (richer link previews when sharing the site)
+- [x] DNS → Vercel — **already set at GoDaddy**
+- [x] Return page polish — done locally (camera UX, copy, layout)
 - [ ] Hero product still — clean duffle photo as video poster / slow-connection fallback
 - [ ] Dedicated gallery images (if different from Instagram)
 - [ ] Analytics (Plausible / GA) when owner wants traffic data
@@ -67,24 +85,29 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — what's next?
+MacTech Gear — wire orders to control center.
 
 Read AGENTS.md and docs/ROADMAP.md first.
 Live: https://mactechgear.ca
 
-Last shipped: Direct shop (Stripe Checkout — Buy on MacTech; Amazon primary).
+Last shipped (2026-06-11): Buy on MacTech re-enabled + returns page + flat CA/US shipping.
 
-Optional: Analytics (Plausible / GA).
+This chat — control center:
+- I have a plan for emails/orders across all my apps
+- MacTech Stripe orders + returns should feed the main control center (not a standalone email-only hack)
+- Bring control center repo/API details in this session
 
 Don't change Amazon ASIN or Behold feed URL unless I ask.
-Partner style: plain English, local check before push. Only push when I say so.
+Partner style: plain English, one slice at a time. Only push when I say ship it.
 ```
 
 ---
 
 ## Maintenance notes
 
-**Preview locally:** `npx serve . -l 3000` → http://localhost:3000
+**Preview page only:** `npx serve . -l 3000` → http://localhost:3000
+
+**Test checkout / returns API:** `npx vercel dev` with `STRIPE_SECRET_KEY` in `.env.local`
 
 **Swap media:** drop files in `assets/` — see `README.md`
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a return — MacTech Gear</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1b4332">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="return-page">
+  <main class="return-main">
+    <a href="../" class="logo return-logo" aria-label="MacTech Gear home">
+      <img src="../assets/logo.png" alt="MacTech Gear" class="logo-mark" width="140" height="32">
+    </a>
+
+    <header class="return-header" id="return-header">
+      <p class="section-eyebrow">Direct orders</p>
+      <h1 class="return-title">Start a return</h1>
+      <p class="return-lead">Bought on MacTech Gear? You can request a refund within <strong>30 days of delivery</strong> if the duffle is unused and in its original condition.</p>
+    </header>
+
+    <form class="return-form" id="return-form" novalidate>
+      <div class="return-form-panel">
+        <label class="return-field">
+          <span>Email used at checkout</span>
+          <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+        </label>
+
+        <label class="return-field">
+          <span>Order number</span>
+          <input type="text" name="orderRef" required placeholder="From your order confirmation email" minlength="6" autocapitalize="off" spellcheck="false">
+          <span class="return-field-hint">In your confirmation email, use the receipt number or order ID near the top.</span>
+        </label>
+
+        <label class="return-field">
+          <span>Reason for return</span>
+          <select name="reason" required>
+            <option value="">Choose one</option>
+            <option value="Changed mind">Changed mind</option>
+            <option value="Ordered by mistake">Ordered by mistake</option>
+            <option value="Arrived damaged">Arrived damaged</option>
+            <option value="Not as described">Not as described</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="return-photo-block">
+        <p class="return-photo-label">Verification photo</p>
+        <p class="return-photo-status" id="return-photo-status">Take a live photo of your duffle — uploads and screenshots are not accepted.</p>
+        <div class="return-photo-actions">
+          <button type="button" class="btn btn-secondary" id="return-camera-start">Open camera</button>
+          <button type="button" class="btn btn-ghost" id="return-camera-capture" hidden>Capture photo</button>
+          <button type="button" class="btn btn-ghost" id="return-camera-retake" hidden>Retake</button>
+        </div>
+        <div class="return-camera" id="return-camera" hidden>
+          <video id="return-camera-video" autoplay playsinline muted></video>
+        </div>
+        <canvas id="return-camera-canvas" hidden></canvas>
+        <img id="return-photo-preview" class="return-photo-preview" alt="" hidden>
+      </div>
+
+      <p class="return-form-error" id="return-form-error" hidden role="alert"></p>
+
+      <button type="submit" class="btn btn-primary btn-lg return-submit" id="return-submit">Submit return request</button>
+    </form>
+
+    <div class="return-success" id="return-success" hidden>
+      <p class="section-eyebrow">Request received</p>
+      <h2 class="return-success-title">Thanks — we have your return.</h2>
+      <p class="return-success-ref">Your reference: <strong data-return-reference></strong></p>
+      <p class="return-success-message" data-return-message></p>
+      <a href="../" class="btn btn-primary">Back to MacTech Gear</a>
+    </div>
+
+    <p class="return-footnote" id="return-footnote">Amazon orders follow <a href="https://www.amazon.ca/dp/B09GM92D7X" target="_blank" rel="noopener noreferrer">Amazon&apos;s return policy</a>.</p>
+  </main>
+
+  <script src="returns.js"></script>
+</body>
+</html>

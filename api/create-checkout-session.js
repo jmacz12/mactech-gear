@@ -1,4 +1,41 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+function loadLocalEnvFile() {
+  if (process.env.STRIPE_SECRET_KEY) return;
+
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const envPath = path.join(process.cwd(), '.env.local');
+    if (!fs.existsSync(envPath)) return;
+
+    for (const line of fs.readFileSync(envPath, 'utf8').split(/\r?\n/)) {
+      if (!line || line.startsWith('#')) continue;
+      const index = line.indexOf('=');
+      if (index === -1) continue;
+
+      const name = line.slice(0, index).trim();
+      let value = line.slice(index + 1).trim();
+      if (!name || process.env[name]) continue;
+
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1);
+      }
+
+      process.env[name] = value;
+    }
+  } catch {
+    /* Local preview only */
+  }
+}
+
+function getStripe() {
+  loadLocalEnvFile();
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) return null;
+  return require('stripe')(key);
+}
 
 const PRODUCT = {
   name: 'MacTech Gear 40L Waterproof Duffle',
@@ -51,7 +88,8 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!process.env.STRIPE_SECRET_KEY) {
+  const stripe = getStripe();
+  if (!stripe) {
     return res.status(503).json({
       error: 'Checkout is not configured yet. Add STRIPE_SECRET_KEY in Vercel.',
     });

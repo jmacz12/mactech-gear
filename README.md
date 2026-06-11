@@ -119,14 +119,22 @@ Visitors can **buy on Amazon** (primary) or **Buy on MacTech** (secondary) at **
 
 ### Local testing
 
-`npx serve` does not run the checkout API. Use:
+`npx serve` only previews the page — **Buy on MacTech will not work** because the Stripe API is not running.
+
+Use:
 
 ```bash
 npm install
 npx vercel dev
 ```
 
-Copy `.env.example` to `.env.local` and add your test `STRIPE_SECRET_KEY`.
+Then open http://localhost:3000
+
+1. Copy `.env.example` to `.env.local`
+2. Paste your test `STRIPE_SECRET_KEY` from the Stripe dashboard (Vercel does not download secret values automatically)
+3. Click **Buy on MacTech** and pay with test card `4242 4242 4242 4242`
+
+**Returns:** direct orders use `shop/returns.html` — customers take a live camera photo (screenshots rejected). Optional: add `RETURN_TO_EMAIL` + `RESEND_API_KEY` in Vercel to email you return requests automatically.
 
 ## Other customization
 

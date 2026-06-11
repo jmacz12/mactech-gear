@@ -5,3 +5,4 @@ node_modules/
 
 # Local 4K master — site uses product.mp4
 assets/video/4k_Final.mp4
+.env*

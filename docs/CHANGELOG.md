@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-11 (go live — direct shop + returns)
+
+- Re-enabled Buy on MacTech ($119.89 in shop section; hero without price) — flat standard shipping CA/US via Stripe Checkout; customer order confirmation email; polished returns page with live camera photo; footer returns link; success page copy without Stripe branding
+
 ## 2026-06-10 (direct shop paused — Amazon only)
 
 - Paused Buy on MacTech buttons while MacTech Stripe account is set up; all shop CTAs back to Amazon only (Stripe API kept in repo for re-enable)
