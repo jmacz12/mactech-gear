@@ -700,6 +700,32 @@ a:focus-visible,
   line-height: 1.85;
 }
 
+.about-chapter a {
+  color: var(--green-300);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+
+.about-chapter a:hover {
+  color: #fff;
+}
+
+.privacy-list {
+  margin: .75rem 0 1rem;
+  padding-left: 1.25rem;
+  color: rgba(242, 242, 240, 0.68);
+  line-height: 1.75;
+}
+
+.privacy-list li + li {
+  margin-top: .45rem;
+}
+
+.about-chapter code {
+  font-size: .92em;
+  color: rgba(242, 242, 240, 0.85);
+}
+
 .about-close {
   text-align: center;
   margin-top: clamp(2rem, 5vw, 2.75rem);

@@ -2,6 +2,11 @@
 
 Newest first. One line per ship.
 
+## 2026-06-13 (analytics — live)
+
+- Privacy policy at `/privacy` — orders, returns, first-party analytics disclosure; footer link on home + about
+- First-party analytics — anonymous session id + page path via `/api/analytics-ping` → Mission Control · https://mactechgear.ca
+
 ## 2026-06-13 (About page)
 
 - Shipped founder story at `/about` — polished three-chapter copy (origin, the bag, in use), footer + mission link on homepage, SEO title/meta/canonical

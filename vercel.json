@@ -1,7 +1,8 @@
 {
   "devCommand": null,
   "rewrites": [
-    { "source": "/about", "destination": "/about.html" }
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
   ],
   "crons": [
     {

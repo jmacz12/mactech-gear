@@ -41,12 +41,16 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Dedicated OG image (1200×630 link preview for social sharing)
 - [x] Direct shop via Stripe Checkout (Amazon primary; MacTech secondary)
 - [x] About page — founder story at `/about`; footer + mission link; SEO canonical
+- [x] Privacy policy at `/privacy` — orders, returns, first-party analytics disclosure; footer link
+- [x] First-party analytics — anonymous session pings to Mission Control (local; ship with env vars)
 
 ---
 
 ## Current focus
 
-**Recommended next:** optional outdoor photo on About when you have one — or hero product still (clean duffle poster / slow-connection fallback). Control center wiring stays in Mission Control repo when ready.
+**Shipped (2026-06-13):** Privacy page at `/privacy`, first-party analytics tracker → Mission Control.
+
+**Next:** Add `MISSION_CONTROL_ANALYTICS_URL` + `MISSION_CONTROL_ANALYTICS_SECRET` on Vercel if live traffic counts stay at zero. Optional: outdoor photo on About, hero product still.
 
 ### Go-live checklist — done
 
@@ -71,7 +75,7 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Return page polish — done locally (camera UX, copy, layout)
 - [ ] Hero product still — clean duffle photo as video poster / slow-connection fallback
 - [ ] Dedicated gallery images (if different from Instagram)
-- [ ] Analytics (Plausible / GA) when owner wants traffic data
+- [x] Analytics — first-party traffic to Mission Control (2026-06-13)
 
 ---
 
@@ -80,20 +84,23 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — pick next polish slice.
+MacTech shop traffic → Mission Control (analytics slice).
 
-Read AGENTS.md and docs/ROADMAP.md first.
-Live: https://mactechgear.ca (real Stripe payments on)
+Read first:
+- C:\Projects\_tools\OWNER-PLAYBOOK.md
+- C:\Projects\MissionControl\docs\ROADMAP.md (Phase 5E, 6A, 6B)
+- C:\Projects\MissionControl\AGENTS.md
+- C:\Projects\MacTech\website\docs\ROADMAP.md
 
-Last shipped (2026-06-13): About page at /about — founder story, footer + mission link.
+Live:
+- Mission Control: https://mission-control-black-nu.vercel.app
+- MacTech shop: https://mactechgear.ca
 
-Options (owner picks one):
-- Drop an outdoor photo into assets/ → add to About page
-- Hero product still — clean duffle photo as video poster / slow-connection fallback
-- Analytics (Plausible / GA) when owner wants traffic data
+Last shipped here (2026-06-13): About page at /about.
 
+This chat — step 1 is MacTech privacy page + footer link, then tracker, then Mission Control DB + UI.
 Don't change Amazon ASIN or Behold feed URL unless I ask.
-Partner style: plain English, one slice at a time. Local first — only push when I say ship it.
+Local first — only push when I say ship it.
 ```
 
 ---
