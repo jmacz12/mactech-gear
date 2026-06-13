@@ -1,5 +1,8 @@
 {
   "devCommand": null,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" }
+  ],
   "crons": [
     {
       "path": "/api/instagram",

@@ -2,6 +2,14 @@
 
 Newest first. One line per ship.
 
+## 2026-06-13 (About page)
+
+- Shipped founder story at `/about` — polished three-chapter copy (origin, the bag, in use), footer + mission link on homepage, SEO title/meta/canonical
+
+## 2026-06-11 (live payments)
+
+- Flipped MacTech direct shop to Stripe live mode on Vercel — real checkout sessions on mactechgear.ca
+
 ## 2026-06-11 (go live — direct shop + returns)
 
 - Re-enabled Buy on MacTech ($119.89 in shop section; hero without price) — flat standard shipping CA/US via Stripe Checkout; customer order confirmation email; polished returns page with live camera photo; footer returns link; success page copy without Stripe branding

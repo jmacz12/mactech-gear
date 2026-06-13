@@ -617,6 +617,107 @@ a:focus-visible,
   line-height: 1.85;
 }
 
+.mission-more {
+  margin-top: 1.35rem;
+}
+
+.mission-more a {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.mission-more a:hover {
+  color: var(--white);
+}
+
+/* ── About page ── */
+.about-page {
+  background: var(--black);
+}
+
+.nav--solid {
+  background: rgba(8, 8, 8, 0.94);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.about-main {
+  padding: calc(var(--nav-offset) + clamp(2.5rem, 6vw, 4rem)) 0 clamp(3rem, 8vw, 5rem);
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(45, 106, 79, 0.12) 0%, transparent 70%),
+    var(--black);
+}
+
+.about-content {
+  position: relative;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 2.75rem);
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1.08;
+  margin-bottom: 1rem;
+}
+
+.about-lead {
+  font-size: clamp(1.08rem, 2.2vw, 1.22rem);
+  color: rgba(242, 242, 240, 0.88);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.about-chapters {
+  display: grid;
+  gap: clamp(2rem, 5vw, 2.75rem);
+}
+
+.about-chapter {
+  text-align: center;
+}
+
+.about-chapter .section-eyebrow {
+  margin-bottom: .85rem;
+}
+
+.about-chapter p:last-child {
+  font-size: clamp(1rem, 2vw, 1.08rem);
+  color: rgba(242, 242, 240, 0.68);
+  line-height: 1.85;
+}
+
+.about-close {
+  text-align: center;
+  margin-top: clamp(2rem, 5vw, 2.75rem);
+  padding-top: clamp(1.75rem, 4vw, 2.25rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: clamp(1rem, 2vw, 1.08rem);
+  color: rgba(242, 242, 240, 0.78);
+  line-height: 1.85;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+  margin-top: clamp(2rem, 5vw, 2.75rem);
+}
+
 /* ── Features ── */
 .features {
   background:
@@ -1567,7 +1668,15 @@ body.lightbox-open {
 }
 
 .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .35rem 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.footer-links a[aria-current="page"] {
+  color: rgba(242, 242, 240, 0.72);
 }
 
 .footer-links a {

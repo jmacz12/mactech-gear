@@ -40,35 +40,30 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] Scroll progress / back-to-top (subtle wayfinding on long scroll)
 - [x] Dedicated OG image (1200×630 link preview for social sharing)
 - [x] Direct shop via Stripe Checkout (Amazon primary; MacTech secondary)
+- [x] About page — founder story at `/about`; footer + mission link; SEO canonical
 
 ---
 
 ## Current focus
 
-**Session 1: Go live** — code **shipped** 2026-06-11. Finish checklist below before real money.
+**Recommended next:** optional outdoor photo on About when you have one — or hero product still (clean duffle poster / slow-connection fallback). Control center wiring stays in Mission Control repo when ready.
 
-### Go-live checklist (this session)
+### Go-live checklist — done
 
-Do these in order — one slice at a time:
+1. [x] Ship code — Buy on MacTech + returns on mactechgear.ca
+2. [x] Smoke test — checkout creates live sessions; test payments in Dashboard
+3. [x] Vercel env — `SITE_URL`, shipping cents, `STRIPE_SECRET_KEY` (live)
+4. [x] Stripe live key + redeploy
+5. [ ] **Optional proof order** — one real card purchase → confirmation email + shipping address in Stripe (Live → Payments)
+6. [ ] **Stripe branding** — confirm business name MacTech Gear + receipt emails on (if not done during setup)
 
-1. [x] **Ship code** — Buy on MacTech + return page on mactechgear.ca
-2. [ ] **Smoke test on live (test mode)** — Buy on MacTech → MacTech Gear at checkout → order confirmed → footer returns page
-3. [ ] **Vercel env audit** — `SITE_URL=https://mactechgear.ca`, `SHIPPING_CA_CENTS`, `SHIPPING_US_CENTS` (`PRODUCT_PRICE_CENTS=11989` optional; defaults in code)
-4. [ ] **Stripe Dashboard** — public business name = MacTech Gear (not MyLeaguePortal); customer receipt emails on
-5. [ ] **Flip to live payments** — swap `STRIPE_SECRET_KEY` to `sk_live_…` → redeploy → one real order when ready
-6. [ ] **Fulfillment** — Stripe → Payments shows shipping address + phone
-
-**Not in go-live slice:** taxes (Stripe Tax + accountant), express/local shipping tiers, control center wiring, analytics.
-
-**Owner notification today:** no site-built order alert yet — use Stripe Dashboard (or Stripe Settings → Notifications) until control center is wired.
-
-**Session 2 (after live): Control center** — owner has a plan: MacTech orders + return emails feed the **main control center for all apps** (not a one-off inbox ping). Bring architecture/repo details in that chat.
+**Owner notification today:** Stripe Dashboard until control center is wired.
 
 ---
 
 ## Later (optional, not urgent)
 
-- [ ] **Main control center** — hub for all projects (MacTech Gear, MyLeaguePortal, etc.). **Owner has a plan** — next session after go-live: Stripe webhook (or shared API) sends **new orders** and **return requests** into control center; pack & ship from one place. Returns may share `RETURN_TO_EMAIL` / Resend path or webhook only.
+- [ ] **Main control center** — hub for all projects (MacTech Gear, MyLeaguePortal, etc.). **Owner has a plan** — Stripe webhook (or shared API) sends **new orders** and **return requests** into control center; pack & ship from one place. Returns may share `RETURN_TO_EMAIL` / Resend path or webhook only.
 - [ ] **Shipping tiers** — express vs standard; local pickup (free) — flat rates for now
 - [ ] **Taxes** — Stripe Tax + accountant before scaling live volume
 - [ ] **Optional:** Retry Namecheap transfer (owner deferred — OK at GoDaddy)
@@ -85,20 +80,20 @@ Do these in order — one slice at a time:
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — wire orders to control center.
+MacTech Gear — pick next polish slice.
 
 Read AGENTS.md and docs/ROADMAP.md first.
-Live: https://mactechgear.ca
+Live: https://mactechgear.ca (real Stripe payments on)
 
-Last shipped (2026-06-11): Buy on MacTech re-enabled + returns page + flat CA/US shipping.
+Last shipped (2026-06-13): About page at /about — founder story, footer + mission link.
 
-This chat — control center:
-- I have a plan for emails/orders across all my apps
-- MacTech Stripe orders + returns should feed the main control center (not a standalone email-only hack)
-- Bring control center repo/API details in this session
+Options (owner picks one):
+- Drop an outdoor photo into assets/ → add to About page
+- Hero product still — clean duffle photo as video poster / slow-connection fallback
+- Analytics (Plausible / GA) when owner wants traffic data
 
 Don't change Amazon ASIN or Behold feed URL unless I ask.
-Partner style: plain English, one slice at a time. Only push when I say ship it.
+Partner style: plain English, one slice at a time. Local first — only push when I say ship it.
 ```
 
 ---
