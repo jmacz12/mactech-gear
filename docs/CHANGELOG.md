@@ -2,6 +2,11 @@
 
 Newest first. One line per ship.
 
+## 2026-06-14 (visual refresh + analytics live)
+
+- Futuristic visual refresh — mactech.app-aligned dark/glass look (Syne typography, emerald accents, glass cards, official MacTech logo); all shop pages including about, privacy, returns, success
+- Analytics ops — fixed Vercel env (Mission Control URL + matched secrets); live visitor pings stored in Mission Control · https://mactechgear.ca
+
 ## 2026-06-13 (analytics — live)
 
 - Privacy policy at `/privacy` — orders, returns, first-party analytics disclosure; footer link on home + about

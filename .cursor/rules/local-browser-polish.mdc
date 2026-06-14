@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+description: Verify UI in Cursor browser on local dev before done — this is the polish pass.
+---
+
+# Local browser polish (owner locked 2026-06-14)
+
+**Master reference:** `C:\Projects\_tools\OWNER-PLAYBOOK.md`
+
+**Plain English:** The owner keeps **local preview up** so you can **see mactechgear.ca pages in Cursor's browser** before publish. **Proactive polish** means open local, look, and fix obvious shop UI in the same session.
+
+## Before "done" on any visible change
+
+1. Confirm **local preview** is running (`vercel dev` or project README). **Start it yourself** if not.
+2. **Open affected pages in Cursor browser** — home, about, shop, privacy, returns, etc.
+3. **Look** — layout, mobile, copy, checkout/returns flows you touched.
+4. **Fix** obvious issues without asking.
+5. Then **Local only (not pushed yet)** + owner check steps.
+
+## If local is not up
+
+- Say: **"Local isn't up — please open the shop URL in Cursor browser"** (or ask to start dev).
+- Do **not** skip the browser pass for UI work.
+
+## With other rules
+
+- Owner says **ship it** before push/deploy to Vercel.

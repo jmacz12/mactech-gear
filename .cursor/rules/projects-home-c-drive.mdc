@@ -1,0 +1,12 @@
+---
+description: C:\Projects = one folder per project; all product files live inside that folder, never loose at root.
+alwaysApply: true
+---
+
+# C:\Projects — one folder per project
+
+- **MacTech** = one project folder: `C:\Projects\MacTech\`
+  - `website\` — site code (open this in Cursor)
+  - `design-assets\` — logos / art
+- Never put MacTech files loose at `C:\Projects` root.
+- **New brand:** `C:\Projects\_tools\new-project.ps1 -Name "Brand" -Inside "website"`
