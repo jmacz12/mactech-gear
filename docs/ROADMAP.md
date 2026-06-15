@@ -87,23 +87,25 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 Copy into a fresh Cursor chat:
 
 ```
-WrkPulse visual refresh (fresh chat).
+MacTech Gear — continue (fresh chat).
 
-Read first:
+Read first (on disk):
 - C:\Projects\_tools\OWNER-PLAYBOOK.md
-- C:\Projects\MissionControl\docs\ROADMAP.md (brand direction)
 - C:\Projects\MacTech\website\docs\ROADMAP.md
+- C:\Projects\MacTech\website\AGENTS.md (config locks — ASIN / Behold URL)
+
+Trace connected code:
+- Static pages + Vercel API (checkout, returns, analytics ping to Mission Control)
+- Grep routes and script.js consumers before changing shop flow
 
 Live:
 - MacTech shop: https://mactechgear.ca
-- Company showcase: https://mactech.app (DNS pending on Namecheap)
+- Company showcase: https://mactech.app
 - Mission Control: https://control.mactech.app
 
 Last shipped MacTech (2026-06-14): Visual refresh + analytics live in Mission Control.
 
-Owner still to do: mactech.app DNS on Namecheap; optional proof order; Stripe receipt branding.
-
-Next engineering slice: WrkPulse visual refresh (dark/futuristic, match mactech.app).
+Next engineering slice: WrkPulse visual refresh OR further shop polish (per ROADMAP).
 Local first — only push when I say ship it.
 ```
 
