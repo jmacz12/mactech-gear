@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-16 (post-hero polish — live)
+
+- Post-hero polish — shop CTA band matches hero morph (Buy on **Amazon** / **MacTech** glass buttons); emerald token sweep on mission, lightbox, video play; gallery section-header rhythm; feature grid spacing; footer glass pass · hero unchanged · https://mactechgear.ca
+
 ## 2026-06-16 (hero morph + visual polish — live)
 
 - Hero shop morph CTA — Shop now morphs in place to Amazon (primary) + MacTech buy links; brand-word emerald accents, rail bloom, whole-link hover grow; Explore the Duffle ghost link with chevron

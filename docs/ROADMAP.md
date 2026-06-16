@@ -49,20 +49,11 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 
 ## Current focus
 
-**Shipped (2026-06-16):** Hero morph CTA + visual polish slice — live on mactechgear.ca. **F008** morph pattern in `DESIGN-FAVORITES.md`.
+**Shipped (2026-06-16):** Post-hero polish — live on mactechgear.ca (shop CTA morph-style buttons, emerald sweep below fold, gallery/video rhythm, footer pass). Hero morph slice (F008) unchanged.
 
-**Next (local):** **Post-hero polish** — everything below the fold (see order below).
+**Next (when you want it):** Optional owner tasks only — proof order, Stripe receipt branding, **mactech.app** root DNS on Namecheap. No urgent product slice until you ask.
 
-**Post-hero polish order (new chat):**
-
-1. **Shop CTA band (`#shop`)** — match hero hierarchy: Amazon primary glass button, MacTech secondary; accent the brand words (Amazon / MacTech) like hero morph.
-2. **Emerald token sweep** — hunt leftover forest-green in `styles.css` (mission pattern, lightbox close, video play, link hovers) → match slice 1 glass/emerald.
-3. **Feature grid** — verify mobile “tap to enlarge” affordance; card hover glow + spacing rhythm vs hero.
-4. **Video + gallery sections** — eyebrow rhythm, glass headers, section spacing aligned with mactech.app.
-5. **Info cards + mission** — glass polish; optional trim duplicate “Designed in Canada” if it feels repetitive.
-6. **Footer** — light pass only if anything still reads “old green” or flat vs hero.
-
-**Do not change:** Stripe checkout, returns API, analytics, ASIN / Behold URL locks (`AGENTS.md`). **Do not touch hero** unless owner asks.
+**Do not change without asking:** Stripe checkout, returns API, analytics, ASIN / Behold URL locks (`AGENTS.md`). **Hero is locked** unless you ask.
 
 **Owner:** Namecheap DNS for **mactech.app**; optional proof order; Stripe receipt branding in Dashboard.
 
@@ -98,36 +89,25 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — post-hero polish (fresh chat). Hero is LOCKED — do not change hero.
+MacTech Gear — what's next? Hero + below-fold polish shipped live (2026-06-16).
 
 Read first (on disk):
 - C:\Projects\_tools\OWNER-PLAYBOOK.md
 - C:\Projects\_tools\SESSION-START.md
-- C:\Projects\MacTech\website\docs\ROADMAP.md (Post-hero polish order)
+- C:\Projects\MacTech\website\docs\ROADMAP.md
 - C:\Projects\MacTech\website\AGENTS.md (config locks — ASIN / Behold URL)
-- C:\Projects\_tools\DESIGN-FAVORITES.md (F003 showcase dark premium, F008 hero shop morph)
+- C:\Projects\_tools\DESIGN-FAVORITES.md (F003, F008)
 
 Repo: C:\Projects\MacTech\website
 Local preview: npx serve . -l 3000 → http://localhost:3000
-Browser check desktop + ~390px before calling done.
 
 State:
-- Shipped live (2026-06-16): hero morph + visual polish on mactechgear.ca
-- Shipped live (2026-06-14): prior visual refresh + analytics
-- Hero LOCKED — do not change hero HTML + .hero-shop* CSS unless owner asks
+- Live (2026-06-16): hero morph (F008) + post-hero polish on mactechgear.ca
+- Live (2026-06-14): visual refresh + analytics
+- Hero LOCKED unless I ask
 
-Polish below the fold in ROADMAP order:
-1. #shop CTA band — Amazon primary / MacTech secondary + brand-word accents
-2. Emerald token sweep (old green → glass emerald in mission, lightbox, video play)
-3. Feature grid — mobile tap affordance + card rhythm
-4. Video + gallery sections
-5. Info cards + mission copy spacing
-6. Footer light pass if needed
-
-Trace: index.html, styles.css, script.js · checkout in api/ unchanged unless broken.
-
-Live reference: https://mactech.app (direction) · https://mactechgear.ca (last ship)
-Say ship it when I want production deploy.
+No urgent engineering slice — optional: proof order, Stripe branding, mactech.app DNS.
+Say what you want next or ask for one recommended slice from ROADMAP.
 ```
 
 ---
