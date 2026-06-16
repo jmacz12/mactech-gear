@@ -35,6 +35,7 @@ One premium outdoor brand feel across nav, hero, trust bar, features, gallery, f
 ## Source of truth
 
 - **`docs/ROADMAP.md`** — what's next
+- **`docs/PRODUCT.md`** — stack, locks, shipped summary, ops
 - **`docs/CHANGELOG.md`** — what shipped
 - **`AGENTS.md`** — doc map and config locks
 

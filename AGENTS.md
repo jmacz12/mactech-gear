@@ -9,13 +9,14 @@ Static product landing page (`index.html`, `styles.css`, `script.js`). Deployed 
 
 | # | File | Use for |
 |---|------|---------|
-| 1 | **`docs/ROADMAP.md`** | What's done, what's next, copy-paste for new chats |
-| 2 | **`docs/CHANGELOG.md`** | Shipped history — prepend one dated line when we ship |
+| 1 | **`docs/ROADMAP.md`** | What's next, Later, **New session — start here** |
+| 2 | **`docs/PRODUCT.md`** | What the site is — stack, locks, shipped summary, ops |
+| 3 | **`docs/CHANGELOG.md`** | Shipped history — prepend one dated line when we ship |
 | 3 | **`C:\Projects\_tools\DESIGN-FAVORITES.md`** | Owner-approved UI patterns (all projects) |
 | 4 | **`C:\Projects\_tools\SESSION-START.md`** | Cross-project new-chat consistency |
 | 5 | **`.cursor/rules/`** | How to work with the owner (plain English, local-first, polish) |
 
-No archive doc unless ROADMAP handoff blocks get long.
+No archive doc unless ROADMAP handoff blocks get long — use **`docs/ROADMAP-archive.md`** when replacing handoffs.
 
 ## Owner working style
 
@@ -35,7 +36,7 @@ Read **`.cursor/rules/mactech-gear-core.mdc`** first. Summary:
 ## On ship
 
 1. Prepend **`docs/CHANGELOG.md`**
-2. Update **`docs/ROADMAP.md`** → "New session — start here" if the next task changed
+2. Update **`docs/ROADMAP.md`** → Current focus / handoff if the next task changed; **`docs/PRODUCT.md`** if locks or behavior changed
 3. Push only after owner says **push / ship it**
 
 ## Preview

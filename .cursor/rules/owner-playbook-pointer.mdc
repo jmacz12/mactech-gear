@@ -9,7 +9,7 @@ When this chat starts, **read these first** (skim if already in context):
 
 1. **`C:\Projects\_tools\OWNER-PLAYBOOK.md`** — how the owner wants replies, local-before-live, and verification
 2. **`C:\Projects\_tools\SESSION-START.md`** — cross-project consistency index (read order, rule bundle, handoff)
-3. **This repo:** ROADMAP (`docs/ROADMAP.md`) and `.cursor/rules/` for product-specific rules
+3. **This repo:** ROADMAP (`docs/ROADMAP.md`), PRODUCT (`docs/PRODUCT.md` when scoping), and `.cursor/rules/`
 
 Then **`C:\Projects\_tools\`** when you need shared scripts:
 

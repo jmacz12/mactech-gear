@@ -1,5 +1,5 @@
 ---
-description: Session start — read owner playbook + ROADMAP/CHANGELOG/AGENTS (+ design favorites on UI work)
+description: Session start — read owner playbook + ROADMAP/CHANGELOG/PRODUCT (+ design favorites on UI work)
 alwaysApply: true
 ---
 
@@ -11,8 +11,9 @@ alwaysApply: true
 |---|------|-----|
 | 1 | `C:\Projects\_tools\OWNER-PLAYBOOK.md` | How the owner wants replies, local-before-live, verification |
 | 2 | `C:\Projects\_tools\SESSION-START.md` | Cross-project read order, rule bundle, handoff template |
-| 3 | `docs/ROADMAP.md` | Current focus, phases, **New session — start here**, config locks |
+| 3 | `docs/ROADMAP.md` | Current focus, Later, **New session — start here** |
 | 4 | `docs/CHANGELOG.md` | What shipped recently (local vs live) |
+| 4b | `docs/PRODUCT.md` | **Scoping** — stack, locks, ops |
 | 5 | `AGENTS.md` | Config locks, preview command, ship workflow |
 | 6 | `C:\Projects\_tools\DESIGN-FAVORITES.md` | **UI / visual work only** — owner-approved patterns to reuse |
 

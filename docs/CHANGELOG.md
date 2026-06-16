@@ -1,6 +1,12 @@
-# Changelog
+# MacTech Gear — changelog
 
-Newest first. One line per ship.
+Append-only ship log (newest first). **What's next** → [`ROADMAP.md`](./ROADMAP.md) · **Product reference** → [`PRODUCT.md`](./PRODUCT.md).
+
+---
+
+## 2026-06-16 (doc split — PRODUCT.md)
+
+- Portfolio doc standard — lean forward-only ROADMAP · product reference in **`docs/PRODUCT.md`** · handoffs archived · agent read order updated · docs only · owner ship-it
 
 ## 2026-06-16 (trust bar — live)
 
