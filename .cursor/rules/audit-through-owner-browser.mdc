@@ -1,0 +1,25 @@
+---
+description: Audit = walk Cursor browser on localhost — same tab owner sees (all projects)
+alwaysApply: true
+---
+
+# Audit through owner's eyes (all projects)
+
+**Master reference:** `C:\Projects\_tools\LOCAL-AUDIT-WORKFLOW.md` → **Audit through owner's eyes**
+
+**Plain English:** When the owner says **audit**, they mean the agent walks the app in the **Cursor built-in browser** on **localhost** — the same view they can watch — not a code-only review or a separate Chrome window.
+
+## Mandatory for every audit
+
+1. **Start local dev** — do not ask permission (`local-browser-polish.mdc`).
+2. **Cursor browser only** — use MCP browser tools; navigate with **`position: "active"`** (or **`"side"`** when owner asked for sidebar) so the panel is visible.
+3. **One visible tab** — prefer navigating in the tab the owner has open; avoid depending on background tabs they cannot see.
+4. **Mobile-first (~390px)** then desktop — screenshot/snapshot each important screen.
+5. **Confirm sync** when owner asks "do you see what I see?" — `browser_tabs` list + `browser_snapshot` on their URL; answer in plain English (URL + headline on screen).
+6. **No code changes** during audit phase unless localhost is broken (`local-audit-before-build.mdc`).
+
+## Do not
+
+- Audit from **grep / file reads alone** when the task is UI or full-tab pass.
+- Assume the owner's **manual browser tab** (Chrome/Edge) follows agent navigation.
+- Open many hidden tabs without telling the owner which URL to watch.

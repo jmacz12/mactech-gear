@@ -1,0 +1,28 @@
+---
+description: Agent picks the best next ROADMAP slice — one recommendation, no menus.
+alwaysApply: true
+---
+
+# Choose the best next slice (owner preference)
+
+**Owner is not a coder (locked 2026-06-16):** They prefer **you** assess ROADMAP + product state and **pick the best next slice** — not a pick-one-of-many menu. Say **one recommendation + why** in plain English; on **continue** / **go** / **what’s next** / **you decide**, **start that slice** unless they redirect.
+
+When the owner says **continue**, **what’s next**, **what should we work on**, **you decide**, or finishes a slice without naming the next task:
+
+1. **Read `docs/ROADMAP.md`** — **Current focus**, **Later**, **New session — start here**, deferrals. Use **`docs/PRODUCT.md`** when scoping.
+2. **Pick one slice** — start on **continue** without a menu.
+3. **Say why briefly** — one or two plain-English sentences, then execute.
+
+**Do not** default to listing three to five equal options.
+
+## MacTech priority hints
+
+1. **Shop broken** — checkout, Stripe, cart, live site errors.
+2. **ROADMAP next** — unblocked **Current focus**.
+3. **Revenue path** — product pages, checkout polish, order confirmation.
+4. **Mission Control hooks** — webhooks, order visibility (when ROADMAP says).
+5. **Polish in area** — while touching that surface.
+
+After a major ship: **local audit (audit only)** per **`LOCAL-AUDIT-WORKFLOW.md`** unless production is broken.
+
+See portfolio template: **`C:\Projects\_tools\templates\cursor-rules\choose-next-slice.mdc`**.
