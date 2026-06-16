@@ -51,6 +51,8 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 
 **Shipped (2026-06-16):** Post-hero polish — live on mactechgear.ca (shop CTA morph-style buttons, emerald sweep below fold, gallery/video rhythm, footer pass). Hero morph slice (F008) unchanged.
 
+**Saved locally (2026-06-16):** Unified trust bar under hero (`Amazon + direct shop · Canada & US shipping`) — owner happy with site; push when you say **ship it**.
+
 **Next (when you want it):** Optional owner tasks only — proof order, Stripe receipt branding, **mactech.app** root DNS on Namecheap. No urgent product slice until you ask.
 
 **Do not change without asking:** Stripe checkout, returns API, analytics, ASIN / Behold URL locks (`AGENTS.md`). **Hero is locked** unless you ask.
@@ -89,25 +91,23 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 Copy into a fresh Cursor chat:
 
 ```
-MacTech Gear — what's next? Hero + below-fold polish shipped live (2026-06-16).
+MacTech Gear — maintenance mode. Owner happy with site (2026-06-16).
 
 Read first (on disk):
 - C:\Projects\_tools\OWNER-PLAYBOOK.md
 - C:\Projects\_tools\SESSION-START.md
 - C:\Projects\MacTech\website\docs\ROADMAP.md
 - C:\Projects\MacTech\website\AGENTS.md (config locks — ASIN / Behold URL)
-- C:\Projects\_tools\DESIGN-FAVORITES.md (F003, F008)
 
 Repo: C:\Projects\MacTech\website
-Local preview: npx serve . -l 3000 → http://localhost:3000
+Live: https://mactechgear.ca
 
 State:
-- Live (2026-06-16): hero morph (F008) + post-hero polish on mactechgear.ca
-- Live (2026-06-14): visual refresh + analytics
+- Live: hero morph + post-hero polish + visual refresh + analytics
+- Local commit (not pushed): unified trust bar under hero — ship it when ready
 - Hero LOCKED unless I ask
 
-No urgent engineering slice — optional: proof order, Stripe branding, mactech.app DNS.
-Say what you want next or ask for one recommended slice from ROADMAP.
+No urgent engineering slice. Cross-project ideas → DESIGN-FAVORITES.md (UI) or target project ROADMAP Later.
 ```
 
 ---
