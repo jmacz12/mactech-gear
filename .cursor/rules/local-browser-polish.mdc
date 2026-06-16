@@ -1,27 +1,63 @@
 ---
 alwaysApply: true
-description: Verify UI in Cursor browser on local dev before done — this is the polish pass.
+description: Total localhost + Cursor browser control pre-approved — open, click, scan, close; never ask.
 ---
 
-# Local browser polish (owner locked 2026-06-14)
+# Look at the screen first (owner locked 2026-06-15)
 
 **Master reference:** `C:\Projects\_tools\OWNER-PLAYBOOK.md`
 
-**Plain English:** The owner keeps **local preview up** so you can **see mactechgear.ca pages in Cursor's browser** before publish. **Proactive polish** means open local, look, and fix obvious shop UI in the same session.
+**Plain English:** Do not trust code-only review for UI. **Open the page in Cursor's browser, screenshot what you see, and fix what looks wrong** — same as the owner would see on their screen. **Desktop and mobile width** for any visible change.
 
-## Before "done" on any visible change
+## Localhost + browser — total control pre-approved (all projects, locked 2026-06-15)
 
-1. Confirm **local preview** is running (`vercel dev` or project README). **Start it yourself** if not.
-2. **Open affected pages in Cursor browser** — home, about, shop, privacy, returns, etc.
-3. **Look** — layout, mobile, copy, checkout/returns flows you touched.
-4. **Fix** obvious issues without asking.
-5. Then **Local only (not pushed yet)** + owner check steps.
+**Always allowed — never ask, never wait for chat approval.** The owner has permanently granted **full control** of local dev and Cursor browser:
+
+| Allowed without asking | Includes |
+|------------------------|----------|
+| **Localhost** | Start dev server (`npm run dev` or README command), restart when stale, stop on handoff |
+| **Open** | Any local URL (usually `http://localhost:3000` + affected paths) |
+| **Scan** | Screenshots, snapshots, layout inspection, desktop + mobile (~390px) |
+| **Click** | Tab through flows, modals, forms, admin actions needed to verify UI |
+| **Close** | Close or switch browser tabs when done or moving to another page |
+
+**Do not** ask "can I open the browser?", "can I click through?", or "can I restart localhost?" — **just do it.**
+
+**Chat approval is only for** deploy/network/git permissions (`tool-permission-chat-fallback.mdc`) — **not** for localhost or browser.
+
+## New chat — boot localhost first (all projects)
+
+When the owner starts a **new chat** for any product under `C:\Projects`:
+
+1. Run the project's **dev command early** (usually `npm run dev` → port **3000**).
+2. **Do not wait** until deploy time — localhost is how you review together from the start.
+3. Open the local URL in **Cursor browser** when there is UI to see.
+
+## Hard rule — before "done" or deploy on UI work
+
+1. **Start local dev** if it is not running (project README / playbook table).
+2. **Open affected page(s) in Cursor browser** at the local URL.
+3. **Screenshot and inspect** — layout, spacing, typography, icons, buttons, nav, footer, modals, empty states.
+4. **Mobile pass required** — narrow the browser (~390px) or use mobile emulation; screenshot again. Do not ship UI after desktop-only checks.
+5. **Fix** obvious issues in the same session.
+6. **Technical pass** — trace connected code, not only the page you screenshotted.
+7. **Then** report status / deploy (deploy only after this pass — see project deploy checklist).
+
+**Do not** deploy to live first and ask the owner to spot issues there.
 
 ## If local is not up
 
-- Say: **"Local isn't up — please open the shop URL in Cursor browser"** (or ask to start dev).
-- Do **not** skip the browser pass for UI work.
+- **Start dev yourself** — do not ask the owner to start it.
+- If stale or broken: restart (stop + start fresh).
+- Only if start/restart fails after a real attempt: say what failed and what you tried.
 
-## With other rules
+## Default local URLs
 
-- Owner says **ship it** before push/deploy to Vercel.
+| Project | Dev | Local URL |
+|---------|-----|-----------|
+| WrkPulse | `npm run dev` | http://localhost:3000 |
+| MyLeaguePortal | `npm run dev` | http://localhost:3000 |
+| MacTech | `vercel dev` or README | http://localhost:3000 |
+| Mission Control | `npm run dev` | http://localhost:3000 |
+
+Per-project `.cursor/rules/` may add deploy steps — visual check comes **before** those.

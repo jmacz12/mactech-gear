@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="scanline" aria-hidden="true"></div>
+
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true">
     <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
   </div>
@@ -49,11 +51,14 @@
       <a href="#top" class="logo" aria-label="MacTech Gear home">
         <img src="assets/logo.png" alt="MacTech Gear" class="logo-mark" width="140" height="32">
       </a>
-      <a href="#shop" class="nav-cta">Shop Now</a>
+      <div class="nav-end">
+        <span class="nav-meta">Designed in Canada</span>
+        <a href="#shop" class="nav-cta">Shop Now</a>
+      </div>
     </nav>
 
-    <div class="hero-content reveal">
-      <p class="eyebrow">40L Waterproof Duffle · Designed in Canada</p>
+    <div class="hero-content">
+      <p class="eyebrow hero-eyebrow">40L Waterproof Duffle · Designed in Canada</p>
       <h1>Built to <span class="hero-accent">Endure</span></h1>
       <p class="hero-sub">Commercial-grade waterproof armor for gear that cannot get wet — from river crossings and ridgelines to the carry home.</p>
       <ul class="hero-specs" id="hero-specs" aria-label="Product highlights" aria-live="polite">
@@ -62,9 +67,29 @@
         <li><span class="hero-spec-value">Dual</span><span class="hero-spec-label">Carry modes</span></li>
       </ul>
       <div class="hero-actions">
-        <a href="https://www.amazon.ca" data-link="amazon" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Shop on Amazon</a>
-        <button type="button" class="btn btn-secondary" data-shop-checkout>Buy on MacTech</button>
-        <a href="#features" class="btn btn-ghost">Explore the Duffle</a>
+        <div class="hero-shop" id="hero-shop">
+          <div class="hero-shop-morph">
+            <button
+              type="button"
+              class="hero-shop-trigger"
+              id="hero-shop-toggle"
+              aria-expanded="false"
+              aria-controls="hero-shop-options"
+              aria-haspopup="true"
+            >
+              <span class="hero-shop-label">Shop now</span>
+            </button>
+            <div class="hero-shop-options" id="hero-shop-options" aria-hidden="true">
+              <a href="https://www.amazon.ca" data-link="amazon" class="hero-shop-choice hero-shop-choice--primary" target="_blank" rel="noopener noreferrer"><span class="hero-shop-prefix">Buy on</span><span class="hero-shop-accent hero-shop-accent--primary">Amazon</span></a>
+              <span class="hero-shop-split" aria-hidden="true"></span>
+              <button type="button" class="hero-shop-choice" data-shop-checkout><span class="hero-shop-prefix">Buy on</span><span class="hero-shop-accent hero-shop-accent--secondary">MacTech</span></button>
+            </div>
+          </div>
+        </div>
+        <a href="#features" class="hero-explore">
+          <span class="hero-explore-text">Explore the Duffle</span>
+          <span class="hero-explore-mark" aria-hidden="true">›</span>
+        </a>
       </div>
     </div>
 
@@ -88,14 +113,6 @@
       <div class="scroll-line"></div>
     </div>
   </header>
-
-  <div class="trust-bar">
-    <div class="container trust-items">
-      <span class="trust-item">Available on Amazon.ca</span>
-      <span class="divider" aria-hidden="true"></span>
-      <span class="trust-item">Direct shipping — Canada &amp; US</span>
-    </div>
-  </div>
 
   <section class="section mission" id="mission">
     <div class="container narrow reveal">
@@ -142,7 +159,7 @@
       </div>
       <div class="feature-grid">
         <article class="feature-card reveal">
-          <button type="button" class="feature-img feature-img--waterproof" data-lightbox-src="assets/images/feature-waterproof.png" data-lightbox-title="Waterproof Armor" aria-label="View larger image: Waterproof Armor"></button>
+          <button type="button" class="feature-img feature-img--waterproof" data-lightbox-src="assets/images/feature-waterproof.png" data-lightbox-title="Waterproof Armor" aria-label="View larger image: Waterproof Armor"><span class="feature-enlarge-hint" aria-hidden="true">Tap to enlarge</span></button>
           <div class="feature-body">
             <span class="feature-index" aria-hidden="true">01</span>
             <h3>Waterproof Armor</h3>
@@ -150,7 +167,7 @@
           </div>
         </article>
         <article class="feature-card reveal">
-          <button type="button" class="feature-img feature-img--valve" data-lightbox-src="assets/images/feature-valve.png" data-lightbox-title="Air Purge Valve" aria-label="View larger image: Air Purge Valve"></button>
+          <button type="button" class="feature-img feature-img--valve" data-lightbox-src="assets/images/feature-valve.png" data-lightbox-title="Air Purge Valve" aria-label="View larger image: Air Purge Valve"><span class="feature-enlarge-hint" aria-hidden="true">Tap to enlarge</span></button>
           <div class="feature-body">
             <span class="feature-index" aria-hidden="true">02</span>
             <h3>Air Purge Valve</h3>
@@ -158,7 +175,7 @@
           </div>
         </article>
         <article class="feature-card reveal">
-          <button type="button" class="feature-img feature-img--capacity" data-lightbox-src="assets/images/feature-capacity.png" data-lightbox-title="40L Capacity" aria-label="View larger image: 40L Capacity"></button>
+          <button type="button" class="feature-img feature-img--capacity" data-lightbox-src="assets/images/feature-capacity.png" data-lightbox-title="40L Capacity" aria-label="View larger image: 40L Capacity"><span class="feature-enlarge-hint" aria-hidden="true">Tap to enlarge</span></button>
           <div class="feature-body">
             <span class="feature-index" aria-hidden="true">03</span>
             <h3>40L Capacity</h3>
@@ -166,7 +183,7 @@
           </div>
         </article>
         <article class="feature-card reveal">
-          <button type="button" class="feature-img feature-img--carry" data-lightbox-src="assets/images/feature-carry.png" data-lightbox-title="Versatile Carry" aria-label="View larger image: Versatile Carry"></button>
+          <button type="button" class="feature-img feature-img--carry" data-lightbox-src="assets/images/feature-carry.png" data-lightbox-title="Versatile Carry" aria-label="View larger image: Versatile Carry"><span class="feature-enlarge-hint" aria-hidden="true">Tap to enlarge</span></button>
           <div class="feature-body">
             <span class="feature-index" aria-hidden="true">04</span>
             <h3>Versatile Carry</h3>
@@ -174,7 +191,7 @@
           </div>
         </article>
         <article class="feature-card reveal">
-          <button type="button" class="feature-img feature-img--anchor" data-lightbox-src="assets/images/feature-anchor.png" data-lightbox-title="Anchor Points" aria-label="View larger image: Anchor Points"></button>
+          <button type="button" class="feature-img feature-img--anchor" data-lightbox-src="assets/images/feature-anchor.png" data-lightbox-title="Anchor Points" aria-label="View larger image: Anchor Points"><span class="feature-enlarge-hint" aria-hidden="true">Tap to enlarge</span></button>
           <div class="feature-body">
             <span class="feature-index" aria-hidden="true">05</span>
             <h3>Anchor Points</h3>
@@ -182,7 +199,7 @@
           </div>
         </article>
         <article class="feature-card reveal">
-          <button type="button" class="feature-img feature-img--zippers" data-lightbox-src="assets/images/feature-zippers.png" data-lightbox-title="Smooth Zippers" aria-label="View larger image: Smooth Zippers"></button>
+          <button type="button" class="feature-img feature-img--zippers" data-lightbox-src="assets/images/feature-zippers.png" data-lightbox-title="Smooth Zippers" aria-label="View larger image: Smooth Zippers"><span class="feature-enlarge-hint" aria-hidden="true">Tap to enlarge</span></button>
           <div class="feature-body">
             <span class="feature-index" aria-hidden="true">06</span>
             <h3>Smooth Zippers</h3>
@@ -211,6 +228,7 @@
 
   <section class="section gallery" id="gallery">
     <div class="container reveal">
+      <p class="section-eyebrow gallery-eyebrow">In the wild</p>
       <h2 class="gallery-title">Explore with MacTech on Instagram</h2>
       <p class="gallery-sub"><a href="https://www.instagram.com/mactechgear/" data-link="instagram" target="_blank" rel="noopener noreferrer">@mactechgear</a></p>
       <div class="gallery-grid" id="instagram-gallery" data-count="4">

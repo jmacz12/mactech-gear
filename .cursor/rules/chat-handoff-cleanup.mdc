@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+description: New chat — stop dev servers at handoff; start localhost at session start.
+---
+
+# New chat = clean terminals, then localhost
+
+**Master reference:** `C:\Projects\_tools\OWNER-PLAYBOOK.md` · `C:\Projects\_tools\SESSION-START.md`
+
+## End of chat
+
+When the owner says **start a new chat** or you give a **handoff block** after big work:
+
+```powershell
+powershell -File C:\Projects\_tools\stop-dev-servers.ps1 -ProjectPath C:\Projects\MacTech\website
+```
+
+Tell the owner: dev servers stopped for a clean next chat.
+
+## Start of new chat (always)
+
+1. **Start local dev immediately** (`npx serve . -l 3001` or `npx vercel dev`).
+2. Open **http://localhost:3001** in Cursor browser — review together on screen.
+3. Do not ask permission; restart if the port is stale.
+
+See also: `local-browser-polish.mdc`.

@@ -1,5 +1,8 @@
 # MacTech Gear — agent guide
 
+**Owner playbook (all projects):** `C:\Projects\_tools\OWNER-PLAYBOOK.md`  
+**New chat consistency:** `C:\Projects\_tools\SESSION-START.md`
+
 Static product landing page (`index.html`, `styles.css`, `script.js`). Deployed on **Vercel**. No framework.
 
 ## Doc map (lightweight)
@@ -8,7 +11,9 @@ Static product landing page (`index.html`, `styles.css`, `script.js`). Deployed 
 |---|------|---------|
 | 1 | **`docs/ROADMAP.md`** | What's done, what's next, copy-paste for new chats |
 | 2 | **`docs/CHANGELOG.md`** | Shipped history — prepend one dated line when we ship |
-| 3 | **`.cursor/rules/`** | How to work with the owner (plain English, local-first, polish) |
+| 3 | **`C:\Projects\_tools\DESIGN-FAVORITES.md`** | Owner-approved UI patterns (all projects) |
+| 4 | **`C:\Projects\_tools\SESSION-START.md`** | Cross-project new-chat consistency |
+| 5 | **`.cursor/rules/`** | How to work with the owner (plain English, local-first, polish) |
 
 No archive doc unless ROADMAP handoff blocks get long.
 

@@ -127,6 +127,9 @@ function initHeroSpecRotation() {
   const list = document.getElementById('hero-specs');
   if (!list || prefersReducedMotion.matches) return;
 
+  const mobileMq = window.matchMedia('(max-width: 768px)');
+  if (mobileMq.matches) return;
+
   const items = [...list.querySelectorAll('li')];
   if (items.length !== 3) return;
 
@@ -153,7 +156,7 @@ function initHeroSpecRotation() {
   }
 
   function startRotation() {
-    if (timer) return;
+    if (timer || mobileMq.matches) return;
     timer = window.setInterval(nextSet, INTERVAL);
   }
 
@@ -169,10 +172,80 @@ function initHeroSpecRotation() {
     else startRotation();
   });
 
+  mobileMq.addEventListener('change', () => {
+    if (mobileMq.matches) stopRotation();
+    else startRotation();
+  });
+
   startRotation();
 }
 
 initHeroSpecRotation();
+
+/* ── Hero shop morph (mobile dropdown) ── */
+function initHeroShopMenu() {
+  const shop = document.getElementById('hero-shop');
+  const toggle = document.getElementById('hero-shop-toggle');
+  const options = document.getElementById('hero-shop-options');
+  if (!shop || !toggle || !options) return;
+
+  const touchMq = window.matchMedia('(hover: none), (pointer: coarse), (max-width: 768px)');
+  const hoverMq = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  function setExpanded(expanded) {
+    shop.classList.toggle('is-open', expanded);
+    toggle.setAttribute('aria-expanded', String(expanded));
+    options.setAttribute('aria-hidden', String(!expanded));
+  }
+
+  function closeMenu() {
+    setExpanded(false);
+  }
+
+  function openMenu() {
+    setExpanded(true);
+  }
+
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    shop.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!shop.classList.contains('is-open')) return;
+    if (!shop.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  options.addEventListener('click', (event) => {
+    if (event.target.closest('[data-shop-checkout], [data-link="amazon"], .hero-shop-choice--primary')) {
+      closeMenu();
+    }
+  });
+
+  function syncHoverAria(expanded) {
+    if (!hoverMq.matches || shop.classList.contains('is-open')) return;
+    toggle.setAttribute('aria-expanded', String(expanded));
+    options.setAttribute('aria-hidden', String(!expanded));
+  }
+
+  shop.addEventListener('mouseenter', () => syncHoverAria(true));
+  shop.addEventListener('mouseleave', () => syncHoverAria(false));
+
+  function syncLayout() {
+    closeMenu();
+  }
+
+  touchMq.addEventListener('change', syncLayout);
+  hoverMq.addEventListener('change', syncLayout);
+  window.addEventListener('resize', syncLayout, { passive: true });
+  syncLayout();
+}
+
+initHeroShopMenu();
 
 /* ── Image lightbox (features + Instagram gallery) ── */
 function initImageLightbox() {

@@ -2,6 +2,11 @@
 
 Newest first. One line per ship.
 
+## 2026-06-16 (hero morph + visual polish — live)
+
+- Hero shop morph CTA — Shop now morphs in place to Amazon (primary) + MacTech buy links; brand-word emerald accents, rail bloom, whole-link hover grow; Explore the Duffle ghost link with chevron
+- Visual polish — emerald glass tokens, CTA hierarchy, feature/gallery/shop-band touches; removed duplicate hero trust pill (shipping stays in shop band + footer) · https://mactechgear.ca
+
 ## 2026-06-14 (visual refresh + analytics live)
 
 - Futuristic visual refresh — mactech.app-aligned dark/glass look (Syne typography, emerald accents, glass cards, official MacTech logo); all shop pages including about, privacy, returns, success

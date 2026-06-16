@@ -1,0 +1,23 @@
+---
+description: Session start — read C:\Projects\_tools master playbook before any project work
+alwaysApply: true
+---
+
+# Owner playbook + _tools (session start)
+
+When this chat starts, **read these first** (skim if already in context):
+
+1. **`C:\Projects\_tools\OWNER-PLAYBOOK.md`** — how the owner wants replies, local-before-live, and verification
+2. **`C:\Projects\_tools\SESSION-START.md`** — cross-project consistency index (read order, rule bundle, handoff)
+3. **This repo:** ROADMAP (`docs/ROADMAP.md`) and `.cursor/rules/` for product-specific rules
+
+Then **`C:\Projects\_tools\`** when you need shared scripts:
+
+| Need | Path |
+|------|------|
+| Stop dev servers (handoff) | `C:\Projects\_tools\stop-dev-servers.ps1` |
+| New project | `C:\Projects\_tools\new-project.ps1` |
+| Cursor rule templates | `C:\Projects\_tools\templates\cursor-rules\` |
+| Owner-approved UI patterns | `C:\Projects\_tools\DESIGN-FAVORITES.md` |
+
+Per-project rules in this repo override the playbook when product-specific.

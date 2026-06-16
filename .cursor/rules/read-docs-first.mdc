@@ -1,0 +1,29 @@
+---
+description: Session start — read owner playbook + ROADMAP/CHANGELOG/AGENTS (+ design favorites on UI work)
+alwaysApply: true
+---
+
+# Read important docs first (locked)
+
+**Before** planning, coding, or answering "what's next" — **read these on disk** (skim only if this chat already opened them this turn):
+
+| # | File | Why |
+|---|------|-----|
+| 1 | `C:\Projects\_tools\OWNER-PLAYBOOK.md` | How the owner wants replies, local-before-live, verification |
+| 2 | `C:\Projects\_tools\SESSION-START.md` | Cross-project read order, rule bundle, handoff template |
+| 3 | `docs/ROADMAP.md` | Current focus, phases, **New session — start here**, config locks |
+| 4 | `docs/CHANGELOG.md` | What shipped recently (local vs live) |
+| 5 | `AGENTS.md` | Config locks, preview command, ship workflow |
+| 6 | `C:\Projects\_tools\DESIGN-FAVORITES.md` | **UI / visual work only** — owner-approved patterns to reuse |
+
+## When to read
+
+- **New chat** or handoff block — always, before local dev or edits
+- **Theme pass, polish, visual refresh** — also read **DESIGN-FAVORITES.md**; see **`design-favorites.mdc`**
+- Owner says they **like** a design → add row to **DESIGN-FAVORITES.md** same session
+
+## After reading
+
+- One recommended next slice from ROADMAP (not a menu)
+- Say **Local only** vs **Live on [URL]** from CHANGELOG + git state
+- Boot localhost early when UI is involved (`local-browser-polish.mdc`)

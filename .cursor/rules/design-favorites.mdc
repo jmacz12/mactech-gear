@@ -1,0 +1,31 @@
+---
+description: Owner design favorites — save liked UI, reuse across projects, offer new ideas
+alwaysApply: true
+---
+
+# Design favorites (all projects)
+
+**Master list:** `C:\Projects\_tools\DESIGN-FAVORITES.md`
+
+## When owner likes a design
+
+If they say they **like**, **love**, or want to **keep** a UI detail:
+
+1. Add it to **Approved** in `DESIGN-FAVORITES.md` (ID, pattern name, project, file/area, one-line note).
+2. Reply in plain English: what was saved and that future projects can reuse it.
+
+## During UI / visual work
+
+- Read `DESIGN-FAVORITES.md` before a theme pass or polish slice.
+- Reuse **Approved** patterns when they fit — do not force them everywhere.
+
+## Proactive suggestions
+
+When you notice a modern UI pattern that fits the product and brand (including after Cursor/tool updates):
+
+- **Mention it briefly** in chat — one sentence, why it might help.
+- Offer a **small local preview** when it's visual (browser on localhost).
+- **Do not ship** until owner says yes.
+- If they approve → add to **Approved**; if no → optional **Passed** row.
+
+Keep suggestions **occasional and relevant** — not every message.

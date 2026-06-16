@@ -19,7 +19,7 @@ alwaysApply: false
 
 ## Consistency
 
-- **Typography:** Barlow Condensed (headings) + DM Sans (body) — don't add random fonts
+- **Typography:** Syne (display) + DM Sans (body) — don't add random fonts
 - **Colors:** use CSS variables in `:root` (`--green`, `--green-bright`, etc.)
 - **Spacing:** section padding and card gaps should feel even hero → features → gallery → footer
 - **Imagery:** product/outdoor tone; assets live in `assets/` with fixed filenames

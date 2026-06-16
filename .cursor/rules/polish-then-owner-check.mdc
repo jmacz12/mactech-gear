@@ -1,0 +1,59 @@
+---
+alwaysApply: true
+description: Agent finishes full polish pass first; owner checks only after "ready for your eyes" with a clear phase banner.
+---
+
+# Polish first, owner checks second
+
+**Master reference:** `C:\Projects\_tools\OWNER-PLAYBOOK.md`
+
+**Plain English:** The owner should not click through half-finished UI. You **finish the slice** (code + localhost + Cursor browser desktop + mobile + build/smoke), **then** tell them what to check — with an obvious label for **where we are in the workflow**.
+
+## Two phases (never blur them)
+
+| Phase | Who | What happens |
+|-------|-----|----------------|
+| **1 — Agent polish** | Assistant | Build, fix, screenshot, mobile pass, technical verification. **Owner does nothing.** |
+| **2 — Owner check** | Owner | Numbered click-through **only after** you say the slice is ready locally. |
+
+**Do not** ask the owner to check pages, ship, or choose the next slice **while phase 1 is still in progress** — unless you are blocked (login, missing env, permission).
+
+## Every "ready for you" message must include a phase banner
+
+Lead with **one** of these (first line of the reply):
+
+| Banner | Meaning for owner |
+|--------|-------------------|
+| **Still building (not ready to check yet)** | Work in progress — ignore localhost for now |
+| **Ready for your eyes — local only (not pushed yet)** | Polish done — use the numbered check steps below |
+| **Waiting for ship it** | You checked locally; say **ship it** when happy |
+| **Live on [URL]** | Pushed and deployed — optional live spot-check |
+
+Also include **one line** on what is **not** in this slice yet (next phase / ROADMAP item) so the owner does not think the whole roadmap shipped.
+
+Example opener:
+
+> **Ready for your eyes — local only (not pushed yet).**  
+> This slice: order detail + fulfillment polish. **Not in this slice yet:** Overview micro-polish (slice 4).
+
+## What "fully polish" means before phase 2
+
+1. Local dev running; affected URLs load
+2. Cursor browser — **desktop + mobile (~390px)** on every visible change
+3. Fix obvious UI issues in the **same session** (do not hand off rough edges)
+4. Technical pass: build and/or project smoke scripts when relevant
+5. **Then** status wording + numbered **How to check locally**
+6. **Wait** — no push until owner says **ship it / push / go live**
+
+## Owner confusion to prevent
+
+| Mistake | Do instead |
+|---------|------------|
+| Owner checks while you are mid-slice | Banner: **Still building** until polish pass is done |
+| Owner thinks local work is live | Always say **local only** vs **live on [URL]** |
+| Owner jumps to next ROADMAP phase | End with **what this slice included** + **what's next (not built yet)** |
+| Long chat mixes many slices | New chat + refreshed ROADMAP handoff block |
+
+## Applies everywhere
+
+MacTech, Mission Control, MyLeaguePortal, WrkPulse, and **every future project** from `new-project.ps1` — same two-phase rhythm.

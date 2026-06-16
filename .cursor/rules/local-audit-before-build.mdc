@@ -1,0 +1,30 @@
+---
+description: Local audit before build — walk localhost, report, then implement (all projects)
+alwaysApply: true
+---
+
+# Local audit before build (all projects)
+
+**Master reference:** `C:\Projects\_tools\LOCAL-AUDIT-WORKFLOW.md`
+
+## When owner asks for audit, full tab pass, or “what needs updating” with no build yet
+
+**Phase 1 — Audit only:**
+
+1. Read `LOCAL-AUDIT-WORKFLOW.md` + project ROADMAP/CHANGELOG.
+2. Boot localhost + Cursor browser — **mobile ~390px first** (`local-browser-polish.mdc`).
+3. Click every tab, sub-tab, and key detail flow; measure speed where unsure.
+4. Write report: good / weak, speed table, ranked improvements, proposed roadmap slices, clarifying questions.
+5. Banner **Audit complete — local only (no code changes yet)** — owner does not click until report is ready.
+
+**Do not** ship code, commit, or push during audit unless fixing a blocker that prevents viewing the app.
+
+## When to suggest this workflow proactively
+
+After a polish ship, when ROADMAP “what’s next” is feel/speed/clutter — recommend **audit chat first**, then implement chat.
+
+## Implement phase
+
+Only after owner picks audit slices — follow `polish-then-owner-check.mdc` + `local-check-before-push.mdc`.
+
+Multi-chat is OK: audit in one chat, build in the next.
