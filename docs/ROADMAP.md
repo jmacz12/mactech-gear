@@ -43,15 +43,13 @@ Simple landing page for **mactechgear.ca**. Static HTML on Vercel.
 - [x] About page — founder story at `/about`; footer + mission link; SEO canonical
 - [x] Privacy policy at `/privacy` — orders, returns, first-party analytics disclosure; footer link
 - [x] First-party analytics — anonymous session pings to Mission Control (2026-06-14 live)
-- [x] **Visual refresh (2026-06-14)** — futuristic/modern pass matching mactech.app showcase (Syne, glass, glow, official logo)
+- [x] **Unified trust bar (2026-06-16)** — Amazon + direct shop · Canada & US shipping under hero
 
 ---
 
 ## Current focus
 
-**Shipped (2026-06-16):** Post-hero polish — live on mactechgear.ca (shop CTA morph-style buttons, emerald sweep below fold, gallery/video rhythm, footer pass). Hero morph slice (F008) unchanged.
-
-**Saved locally (2026-06-16):** Unified trust bar under hero (`Amazon + direct shop · Canada & US shipping`) — owner happy with site; push when you say **ship it**.
+**Shipped (2026-06-16):** Unified trust bar under hero — live on mactechgear.ca (`Amazon + direct shop · Canada & US shipping`). Post-hero polish + hero morph (F008) unchanged.
 
 **Next (when you want it):** Optional owner tasks only — proof order, Stripe receipt branding, **mactech.app** root DNS on Namecheap. No urgent product slice until you ask.
 
@@ -103,11 +101,10 @@ Repo: C:\Projects\MacTech\website
 Live: https://mactechgear.ca
 
 State:
-- Live: hero morph + post-hero polish + visual refresh + analytics
-- Local commit (not pushed): unified trust bar under hero — ship it when ready
+- Live (2026-06-16): trust bar + hero morph + post-hero polish + visual refresh + analytics
 - Hero LOCKED unless I ask
 
-No urgent engineering slice. Cross-project ideas → DESIGN-FAVORITES.md (UI) or target project ROADMAP Later.
+No urgent product work. Next portfolio task: doc split — see _tools/DOC-STRUCTURE.md (new chat).
 ```
 
 ---

@@ -2,6 +2,10 @@
 
 Newest first. One line per ship.
 
+## 2026-06-16 (trust bar — live)
+
+- Unified trust bar under hero — **Amazon + direct shop · Canada & US shipping**; shorter shop-band checkout note (no duplicate copy) · https://mactechgear.ca
+
 ## 2026-06-16 (post-hero polish — live)
 
 - Post-hero polish — shop CTA band matches hero morph (Buy on **Amazon** / **MacTech** glass buttons); emerald token sweep on mission, lightbox, video play; gallery section-header rhythm; feature grid spacing; footer glass pass · hero unchanged · https://mactechgear.ca
