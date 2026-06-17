@@ -37,24 +37,31 @@ function getStripe() {
   return require('stripe')(key);
 }
 
+function envCents(name, fallback) {
+  const parsed = Number(process.env[name]);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
+}
+
 const PRODUCT = {
   name: 'MacTech Gear 40L Waterproof Duffle',
   description: 'Commercial-grade waterproof duffle. Designed in Canada.',
   image: 'https://mactechgear.ca/assets/images/feature-waterproof.png',
-  unitAmount: Number(process.env.PRODUCT_PRICE_CENTS || 11989),
+  unitAmount: envCents('PRODUCT_PRICE_CENTS', 11989),
   currency: 'cad',
 };
 
 function siteOrigin(req) {
-  if (process.env.SITE_URL) return process.env.SITE_URL.replace(/\/$/, '');
+  const configured = (process.env.SITE_URL || '').trim().replace(/\/$/, '');
+  if (configured && /^https?:\/\//i.test(configured)) return configured;
+
   const host = req.headers['x-forwarded-host'] || req.headers.host;
-  const proto = req.headers['x-forwarded-proto'] || 'https';
+  const proto = req.headers['x-forwarded-proto'] || 'http';
   return `${proto}://${host}`;
 }
 
 function shippingOptions() {
-  const ca = Number(process.env.SHIPPING_CA_CENTS || 1500);
-  const us = Number(process.env.SHIPPING_US_CENTS || 2500);
+  const ca = envCents('SHIPPING_CA_CENTS', 1500);
+  const us = envCents('SHIPPING_US_CENTS', 2500);
 
   return [
     {

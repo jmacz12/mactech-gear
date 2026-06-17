@@ -67,7 +67,7 @@ High-level only — detail in **CHANGELOG**.
 | **Features + gallery** | Shipped | 6 feature photos, lightbox, Instagram via Behold + tile lightbox |
 | **Shop** | Shipped | Stripe Checkout live; flat CA/US shipping; trust bar under hero |
 | **About / Privacy / Returns** | Shipped | `/about`, `/privacy`, `/returns` polished |
-| **Analytics** | Shipped | Anonymous session pings to Mission Control |
+| **Analytics** | Shipped | Anonymous session pings + Amazon/MacTech shop click tracking → Mission Control |
 | **Trust bar** | Shipped 2026-06-16 | Amazon + direct shop · Canada & US shipping |
 
 ---

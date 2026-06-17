@@ -22,7 +22,7 @@
 
 ## Last ship
 
-**2026-06-16:** Unified trust bar under hero — Amazon + direct shop · Canada & US shipping · live on mactechgear.ca · see **CHANGELOG**
+**2026-06-17:** Shop click tracking — Amazon + MacTech buy buttons → Mission Control · live on mactechgear.ca · see **CHANGELOG**
 
 ---
 
@@ -71,7 +71,7 @@ Read first (on disk):
 Repo: C:\Projects\MacTech\website
 Live: https://mactechgear.ca
 
-Last ship: 2026-06-16 — trust bar (live)
+Last ship: 2026-06-17 — shop click tracking (live)
 State: maintenance mode — hero LOCKED unless I ask
 
 Local check before push — do not push until I say ship it.
