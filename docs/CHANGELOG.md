@@ -4,6 +4,10 @@ Append-only ship log (newest first). **What's next** → [`ROADMAP.md`](./ROADMA
 
 ---
 
+## 2026-06-21 (trust bar removed — live)
+
+- Removed post-hero trust bar — **Amazon + direct shop · Canada & US shipping**; shipping stays in shop band checkout note only · https://mactechgear.ca
+
 ## 2026-06-17 (shop click tracking — live)
 
 - Shop click tracking — Buy on Amazon + Buy on MacTech ping Mission Control (anonymous session); privacy note updated · checkout API hardening for empty env values · https://mactechgear.ca
